@@ -1,0 +1,58 @@
+databases/
+
+# Local env file
+.env
+env/
+venv/
+
+.brackets.json
+*.pyc
+*.egg-info/*
+src*
+.Python
+build/*
+dist/*
+tmp/*
+*.zip
+scratch.py
+.coverage
+htmlcov/*
+
+# PyCharm and other IntelliJ-based IDE-s and editors' folder:
+.idea
+# vim swap files
+.*.swp
+
+# Don't push our dev configs or the secret app configs.
+dev.cfg
+app.cfg
+
+/.pytest_cache/
+
+# Logs created while debugging
+*.log
+
+
+### OSX template
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
