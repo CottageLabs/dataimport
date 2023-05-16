@@ -1,24 +1,40 @@
 from dataimport.file_manager import FileManager
 from dataimport import logger
-from dataimport.resolver import Resolver
+
+from datetime import datetime, timedelta
+
 
 class Assembler(object):
-    def __init__(self, config, id):
-        self.id = id
+    ASSEMBLE_PIPELINE = ["gather", "analyse", "assemble"]
+
+    def __init__(self, config):
         self.config = config
-        self.file_manager = FileManager(config, self.id)
 
     def log(self, msg):
-        logger.log(msg, self.id.upper())
+        logger.log(msg, "ASSEMBLER")
 
-    def gather(self):
-        sources = self.config.ASSEMBLER_SOURCES.get(self.id, [])
-        self.log('Gathering data for from sources: {x}'.format(x=",".join(sources)))
-        resolver = Resolver(self.config)
-        resolver.resolve(sources)
+    def assemble(self, products, force_update=False, stages=False):
+        if not stages:
+            stages = self.ASSEMBLE_PIPELINE
 
-    def analyse(self):
-        raise NotImplementedError()
+        for product in products:
+            for stage in stages:
+                if stage == "gather":
+                    self.gather(product, force_update)
+                elif stage == "analyse":
+                    self.analyse(product)
+                elif stage == "assemble":
+                    self.assembly(product)
 
-    def assemble(self):
-        raise NotImplementedError()
+    def gather(self, product, force_update=False):
+        product.gather(force_update)
+
+    def analyse(self, product):
+        product.file_manager.fresh()
+        product.analyse()
+        product.file_manager.cleanup()
+
+    def assembly(self, product):
+        product.file_manager.current()
+        product.assemble()
+        product.file_manager.cleanup()

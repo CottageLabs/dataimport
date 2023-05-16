@@ -31,6 +31,7 @@ class Resolver(object):
             datasource.file_manager.cleanup()
 
     def analyse(self, datasource):
+        datasource.file_manager.current()
         datasource.analyse()
 
     def _max_age(self, datasource):

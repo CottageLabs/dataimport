@@ -2,8 +2,8 @@ from dataimport.datasource import Datasource
 from dataimport.lib.secrets import get_secret
 
 from dataimport.analyses.coincident_issns import CoincidentISSNs, CoincidentISSNsFromCSV
-from dataimport.analyses.titles import Titles
-from dataimport.analyses.publishers import Publishers
+from dataimport.analyses.titles import Titles, TitlesFromCSV
+from dataimport.analyses.publishers import Publishers, PublishersFromCSV
 
 import requests
 import tarfile, json, csv
@@ -11,6 +11,9 @@ from copy import deepcopy
 
 
 class DOAJ(Datasource):
+
+    ANALYSES = [CoincidentISSNs, Titles, Publishers]
+
     def fetch(self):
         self.log("downloading latest data dump")
 
@@ -29,17 +32,12 @@ class DOAJ(Datasource):
         self._publisher_map()
         self._licence_map()
 
-    def provides_analysis(self, analysis_class):
-        return isinstance(analysis_class, CoincidentISSNs) or \
-                isinstance(analysis_class, Titles) or \
-                isinstance(analysis_class, Publishers)
-
     def analysis(self, analysis_class):
-        if isinstance(analysis_class, CoincidentISSNs):
+        if analysis_class == CoincidentISSNs:
             return self._coincident_issns_analysis()
-        elif isinstance(analysis_class, Titles):
+        elif analysis_class == Titles:
             return self._titles_analysis()
-        elif isinstance(analysis_class, Publishers):
+        elif analysis_class == Publishers:
             return self._publisher_analysis()
 
     def _extract_doaj_data(self):
@@ -124,7 +122,8 @@ class DOAJ(Datasource):
                         writer.writerow([row[1], row[3], "alt"])
 
     def _titles_analysis(self):
-        pass
+        path = self.file_manager.file_path("titles.csv")
+        return TitlesFromCSV(self.id, filepath=path)
 
     def _publisher_map(self):
         with self.file_manager.output_file("publishers.csv") as outfile, \
@@ -142,7 +141,8 @@ class DOAJ(Datasource):
                         writer.writerow([row[1], row[4]])
 
     def _publisher_analysis(self):
-        pass
+        path = self.file_manager.file_path("publishers.csv")
+        return PublishersFromCSV(self.id, filepath=path)
 
     def _licence_map(self):
         with self.file_manager.output_file("licences.csv") as outfile, \

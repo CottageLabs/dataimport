@@ -1,11 +1,13 @@
 import click
 
 from dataimport.datasource_factory import DatasourceFactory
+from dataimport.product_factory import ProductFactory
 
 # FIXME: this needs to be replaced with proper config management
 from dataimport import settings
 
 from dataimport.resolver import Resolver
+from dataimport.assembler import Assembler
 
 
 @click.command()
@@ -47,20 +49,25 @@ def resolve(targets, stage=None, full_pipeline=True):
     resolver.resolve(datasources, force_update=True, stages=stages)
 
 
-def index(targets, stage=None, full_pipeline=True):
-    if targets[0] == "_all":
-        indexers = factory.get_all_indexers()
-    else:
-        indexers = [factory.get_indexer(target) for target in targets]
+def assemble(targets, stage=None, full_pipeline=True):
+    if stage is None:
+        stage = Assembler.ASSEMBLE_PIPELINE[-1]
 
-    for indexer in indexers:
-        if full_pipeline:
-            for s in INDEX_PIPELINE:
-                getattr(indexer, s)()
-                if s == stage:
-                    break
-        else:
-            getattr(indexer, stage)()
+    stages = [stage]
+
+    if full_pipeline:
+        final = Assembler.ASSEMBLE_PIPELINE.index(stage)
+        stages = Assembler.ASSEMBLE_PIPELINE[0:final + 1]
+
+    pf = ProductFactory(settings)
+
+    if targets[0] == "_all":
+        products = pf.get_all_products()
+    else:
+        products = [pf.get_product(target) for target in targets]
+
+    assembler = Assembler(settings)
+    assembler.assemble(products, force_update=False, stages=stages)
 
 
 def load(targets, stage=None, full_pipeline=True):
@@ -81,12 +88,10 @@ def load(targets, stage=None, full_pipeline=True):
 
 MODE_MAP = {
     "resolve": resolve,
-    "index": index,
+    "assemble": assemble,
     "load": load
 }
 
-
-INDEX_PIPELINE = ["gather", "analyse", "assemble"]
 
 if __name__ == "__main__":
     entry_point()

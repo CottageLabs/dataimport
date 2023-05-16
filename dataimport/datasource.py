@@ -3,6 +3,7 @@ from dataimport import logger
 
 
 class Datasource:
+    ANALYSES = []
 
     def __init__(self, config, id):
         self.id = id
@@ -19,7 +20,7 @@ class Datasource:
         raise NotImplementedError()
 
     def provides_analysis(self, analysis_class):
-        return False
+        return analysis_class in self.ANALYSES
 
     def analysis(self, analysis_class):
         raise NotImplementedError()

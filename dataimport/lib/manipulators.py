@@ -5,6 +5,15 @@ import re
 ISSN_RX = "^\d{4}-\d{3}[\dxX]$"
 
 
+def cluster_to_dict(rows, n):
+    d = {}
+    for row in rows:
+        if row[0] not in d:
+            d[row[0]] = []
+        d[row[0]].append([row[x+1] for x in range(n)])
+    return d
+
+
 def cat_and_dedupe(analyses):
     inputs = []
     for analysis in analyses:
@@ -91,3 +100,40 @@ def remove_invalid_issns(input):
 def valid_issns(issns):
     return [issn.upper() for issn in issns if re.match(ISSN_RX, issn)]
 
+
+def extract_preferred(source_pairs, preference_order):
+    selected = None
+    idx = -1
+    for pref in preference_order:
+        opts = []
+        for i, tup in enumerate(source_pairs):
+            title, source = tup
+            if pref == source:
+                opts.append((i, title))
+
+        if len(opts) == 0:
+            continue
+
+        countopts = {}
+        for opt in opts:
+            if opt[1] not in countopts:
+                countopts[opt[1]] = {"count": 1, "idx": [opt[0]]}
+            else:
+                countopts[opt[1]]["count"] += 1
+                countopts[opt[1]]["idx"].append(opt[0])
+
+        selected_count = 0
+        for k, v in countopts.items():
+            if v["count"] > selected_count:
+                selected = k
+                selected_count = v["count"]
+                idx = v["idx"][0]
+
+        break
+
+    if selected is None:
+        selected = source_pairs[0][0]
+        idx = 0
+
+    del source_pairs[idx]
+    return selected

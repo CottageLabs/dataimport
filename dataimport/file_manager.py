@@ -12,11 +12,28 @@ class FileManager(object):
 
         self._instance = instance
         if instance is None:
-            self.fresh()
+            self.current()
 
     def fresh(self):
         instance = datetime.strftime(datetime.utcnow(), self.config.DIR_DATE_FORMAT)
         self._instance = os.path.join(self._dir, instance)
+
+    def current(self):
+        dirs = []
+        if not os.path.exists(self._dir):
+            self.fresh()
+            return
+
+        for entry in os.listdir(self._dir):
+            if os.path.isdir(os.path.join(self._dir, entry)):
+                dirs.append(entry)
+
+        if len(dirs) == 0:
+            self.fresh()
+            return
+
+        dirs.sort(reverse=True)
+        self._instance = os.path.join(self._dir, dirs[0])
 
     def activate(self):
         os.makedirs(self._instance, exist_ok=True)
@@ -54,6 +71,9 @@ class FileManager(object):
         return datetime.strptime(dirs[0], self.config.DIR_DATE_FORMAT)
 
     def cleanup(self):
+        if not os.path.exists(self._dir):
+            return
+
         dirs = []
         for entry in os.listdir(self._dir):
             if os.path.isdir(os.path.join(self._dir, entry)):

@@ -1,21 +1,21 @@
 import csv, json, itertools, os, re, shutil
 from datetime import datetime
 
-from dataimport.assembler import Assembler
+from dataimport.product import Product
 from dataimport.datasource_factory import DatasourceFactory
 from dataimport.analyses.coincident_issns import CoincidentISSNs
 from dataimport.analyses.titles import Titles
 from dataimport.analyses.publishers import Publishers
 
-from dataimport.lib import manipulators
+from dataimport.lib import manipulators, indexing
 
 
-class JAC(Assembler):
+class JAC(Product):
 
     def analyse(self):
         self.log("Analysing data for journal autocomplete")
 
-        sources = self.config.ASSEMBLER_SOURCES.get(self.id, [])
+        sources = self.config.PRODUCT_SOURCES.get(self.id, [])
         dsf = DatasourceFactory(self.config)
 
         issns = []
@@ -51,26 +51,20 @@ class JAC(Assembler):
     def assemble(self):
         self.log("Preparing journal autocomplete data")
 
-        preference_order = settings.JAC_PREF_ORDER
-        jacdir = os.path.join(self.dir, self.current_dir())
-        outfile = os.path.join(jacdir, "jac.json")
+        preference_order = self.config.JAC_PREF_ORDER
 
-        issn_clusters_file = os.path.join(jacdir, "issn_clusters.csv")
-        titles_file = os.path.join(jacdir, "titles.csv")
-        pubs_file = os.path.join(jacdir, "pubs.csv")
-
-        with open(titles_file) as f:
+        with self.file_manager.input_file("titles.csv") as f:
             reader = csv.reader(f)
             titlerows = [row for row in reader]
 
-        with open(pubs_file) as f:
+        with self.file_manager.input_file("pubs.csv") as f:
             reader = csv.reader(f)
             pubrows = [row for row in reader]
 
-        titles = cluster_to_dict(titlerows, 3)
-        publishers = cluster_to_dict(pubrows, 2)
+        titles = manipulators.cluster_to_dict(titlerows, 3)
+        publishers = manipulators.cluster_to_dict(pubrows, 2)
 
-        with open(issn_clusters_file, "r") as f, open(outfile, "w") as o:
+        with self.file_manager.input_file("issn_clusters.csv") as f, self.file_manager.output_file("jac.json") as o:
             reader = csv.reader(f)
             for vissns in reader:
                 record = {"issns": vissns}
@@ -92,22 +86,6 @@ class JAC(Assembler):
 
         self.log("Journal Autocomplete data assembled")
 
-        self._cleanup()
-
-    def _get_paths(self, paths):
-        issns = []
-        titles = []
-        pubs = []
-        for source, files in paths.items():
-            if "coincident_issns" in files:
-                issns.append((source, files["coincident_issns"]))
-            if "titles" in files:
-                titles.append((source, files["titles"]))
-            if "publishers" in files:
-                pubs.append((source, files["publishers"]))
-
-        return issns, titles, pubs
-
     def _get_titles(self, issns, titles, preference_order):
         mains = []
         alts = []
@@ -125,13 +103,13 @@ class JAC(Assembler):
             if len(alts) == 0:
                 return None, alts
             # otherwise return the best title from the alternates
-            main = extract_preferred(alts, preference_order)
+            main = manipulators.extract_preferred(alts, preference_order)
             return main, [x for x in list(set([a[0] for a in alts])) if x != main]
 
         if len(mains) == 1:
             return mains[0][0], [x for x in list(set([a[0] for a in alts])) if x != mains[0][0]]
 
-        main = extract_preferred(mains, preference_order)
+        main = manipulators.extract_preferred(mains, preference_order)
         return main, [x for x in list(set([m[0] for m in mains] + [a[0] for a in alts])) if x != main]
 
     def _get_publisher(self, issns, publishers, preference_order):
@@ -145,7 +123,7 @@ class JAC(Assembler):
         if len(pubs) == 0:
             return None
 
-        pub = extract_preferred(pubs, preference_order)
+        pub = manipulators.extract_preferred(pubs, preference_order)
         return pub
 
     def _index(self, record):
@@ -154,12 +132,12 @@ class JAC(Assembler):
         idx["issns"] = [issn.lower() for issn in record["issns"]]
         idx["issns"] += [issn.replace("-", "") for issn in idx["issns"]]
 
-        idx["title"] = title_variants(record.get("title", ""))
+        idx["title"] = indexing.title_variants(record.get("title", ""))
         idx["alts"] = idx["title"]  # This helps with getting better index scores because alts also contains the main titles
 
         if "alts" in record:
             for alt in record["alts"]:
-                idx["alts"] += title_variants(alt)
+                idx["alts"] += indexing.title_variants(alt)
             idx["alts"] = list(set(idx["alts"]))
 
         record["index"] = idx

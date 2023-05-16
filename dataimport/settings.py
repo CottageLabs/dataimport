@@ -5,11 +5,11 @@ DATASOURCES = {
     "doaj": "dataimport.datasources.doaj.DOAJ"
 }
 
-ASSEMBLERS = {
-    "jac": "dataimport.datasources.jac.JAC"
+PRODUCTS = {
+    "jac": "dataimport.assemblers.jac.JAC"
 }
 
-ASSEMBLER_SOURCES = {
+PRODUCT_SOURCES = {
     "jac": ["doaj"]
 }
 
@@ -23,11 +23,13 @@ RESOLVER_MAX_AGE = {
 }
 
 STORE_SCOPES = {
-    "doaj": os.path.join(DATABASES, "doaj")
+    "doaj": os.path.join(DATABASES, "datasources", "doaj"),
+    "jac": os.path.join(DATABASES, "products", "jac")
 }
 
 STORE_KEEP_HISORIC = {
-    "doaj": 3
+    "doaj": 3,
+    "jac": 5
 }
 
 
@@ -36,3 +38,5 @@ STORE_KEEP_HISORIC = {
 DOAJ_PUBLIC_DATA_DUMP = "https://doaj.org/public-data-dump/journal"
 DOAJ_PUBLIC_DATA_DUMP_KEYFILE = "/home/richard/Code/External/journalcheckertool/Importer/keyfiles/doaj_public_data_dump.txt"
 
+
+JAC_PREF_ORDER = ["doaj"]
