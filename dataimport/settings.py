@@ -9,6 +9,10 @@ PRODUCTS = {
     "jac": "dataimport.assemblers.jac.JAC"
 }
 
+TARGETS = {
+    "es17": "dataimport.targets.es17.ES17"
+}
+
 PRODUCT_SOURCES = {
     "jac": ["doaj"]
 }
@@ -24,7 +28,8 @@ RESOLVER_MAX_AGE = {
 
 STORE_SCOPES = {
     "doaj": os.path.join(DATABASES, "datasources", "doaj"),
-    "jac": os.path.join(DATABASES, "products", "jac")
+    "jac": os.path.join(DATABASES, "products", "jac"),
+    "es17": os.path.join(DATABASES, "targets")
 }
 
 STORE_KEEP_HISORIC = {

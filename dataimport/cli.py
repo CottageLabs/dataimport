@@ -2,12 +2,14 @@ import click
 
 from dataimport.datasource_factory import DatasourceFactory
 from dataimport.product_factory import ProductFactory
+from dataimport.target_factory import TargetFactory
 
 # FIXME: this needs to be replaced with proper config management
 from dataimport import settings
 
 from dataimport.resolver import Resolver
 from dataimport.assembler import Assembler
+from dataimport.loader import Loader
 
 
 @click.command()
@@ -71,8 +73,22 @@ def assemble(targets, stage=None, full_pipeline=True):
 
 
 def load(targets, stage=None, full_pipeline=True):
+    if stage is None:
+        stage = Loader.LOAD_PIPELINE[-1]
+
+    stages = [stage]
+
+    if full_pipeline:
+        final = Loader.LOAD_PIPELINE.index(stage)
+        stages = Loader.LOAD_PIPELINE[0:final + 1]
+
+    pf = ProductFactory(settings)
+
     if targets[0] == "_all":
-        targets = factory.get_all_index_names()
+        products = pf.get_all_products()
+    else:
+        products = [pf.get_product(target) for target in targets]
+
 
     if full_pipeline:
         index(targets)
