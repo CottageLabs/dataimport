@@ -6,6 +6,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "click~=8.1.3",
+        "esprit @ git+https://github.com/CottageLabs/esprit.git@edda12177effa0945d99302f0d453b22503e335b#egg=esprit",
         "requests==2.22.0",
         "Unidecode==1.1.1",
         "Deprecated==1.2.13",

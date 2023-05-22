@@ -25,3 +25,6 @@ class Datasource:
     def analysis(self, analysis_class):
         raise NotImplementedError()
 
+    def cleanup(self):
+        self.file_manager.cleanup()
+

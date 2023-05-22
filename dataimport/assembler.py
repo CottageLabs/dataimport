@@ -32,9 +32,9 @@ class Assembler(object):
     def analyse(self, product):
         product.file_manager.fresh()
         product.analyse()
-        product.file_manager.cleanup()
+        product.cleanup()
 
     def assembly(self, product):
         product.file_manager.current()
         product.assemble()
-        product.file_manager.cleanup()
+        product.cleanup()

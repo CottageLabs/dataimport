@@ -3,6 +3,8 @@ from dataimport import logger
 
 from datetime import datetime, timedelta
 from dataimport.assembler import Assembler
+from dataimport.target_factory import TargetFactory
+
 
 class Loader(object):
     LOAD_PIPELINE = ["assemble", "prepare", "load"]
@@ -29,12 +31,22 @@ class Loader(object):
         assembler = Assembler(self.config)
         assembler.assemble(products, force_update=force_update)
 
-    def prepare(self, product):
-        product.file_manager.fresh()
-        product.analyse()
-        product.file_manager.cleanup()
+    def prepare(self, products):
+        tf = TargetFactory(self.config)
+        for product in products:
+            targets = tf.get_targets(product)
 
-    def loads(self, product):
-        product.file_manager.current()
-        product.assemble()
-        product.file_manager.cleanup()
+            for target in targets:
+                target.file_manager.fresh()
+                target.prepare()
+                target.cleanup()
+
+    def loads(self, products):
+        tf = TargetFactory(self.config)
+        for product in products:
+            targets = tf.get_targets(product)
+
+            for target in targets:
+                target.file_manager.current()
+                target.load()
+                target.cleanup()

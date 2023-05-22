@@ -8,9 +8,11 @@ from dataimport.analyses.titles import Titles
 from dataimport.analyses.publishers import Publishers
 
 from dataimport.lib import manipulators, indexing
+from dataimport.formats.json_feed import JSONFeed, LineByLineJSON
 
 
 class JAC(Product):
+    FORMATS = [JSONFeed]
 
     def analyse(self):
         self.log("Analysing data for journal autocomplete")
@@ -85,6 +87,11 @@ class JAC(Product):
                 o.write(json.dumps(record) + "\n")
 
         self.log("Journal Autocomplete data assembled")
+
+    def get_format(self, format_class):
+        if format_class == JSONFeed:
+            return LineByLineJSON(path=self.file_manager.file_path("jac.json"))
+        return None
 
     def _get_titles(self, issns, titles, preference_order):
         mains = []

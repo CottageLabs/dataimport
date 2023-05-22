@@ -1,6 +1,10 @@
 from dataimport.lib.paths import rel2abs
 import os
 
+DATABASES = rel2abs(__file__, "..", "databases")
+RESOURCES = rel2abs(__file__, "..", "resources")
+TARGET_DIRS = os.path.join(DATABASES, "targets")
+
 DATASOURCES = {
     "doaj": "dataimport.datasources.doaj.DOAJ"
 }
@@ -17,8 +21,9 @@ PRODUCT_SOURCES = {
     "jac": ["doaj"]
 }
 
-DATABASES = rel2abs(__file__, "..", "databases")
-RESOURCES = rel2abs(__file__, "..", "resources")
+PRODUCT_TARGETS = {
+    "jac": [{"id": "es17", "dir": os.path.join(TARGET_DIRS, "jac__es17")}]
+}
 
 DIR_DATE_FORMAT = "%Y-%m-%d_%H%M"
 
@@ -28,13 +33,13 @@ RESOLVER_MAX_AGE = {
 
 STORE_SCOPES = {
     "doaj": os.path.join(DATABASES, "datasources", "doaj"),
-    "jac": os.path.join(DATABASES, "products", "jac"),
-    "es17": os.path.join(DATABASES, "targets")
+    "jac": os.path.join(DATABASES, "products", "jac")
 }
 
 STORE_KEEP_HISORIC = {
     "doaj": 3,
-    "jac": 5
+    "jac": 5,
+    "es17": 5
 }
 
 
@@ -45,3 +50,27 @@ DOAJ_PUBLIC_DATA_DUMP_KEYFILE = "/home/richard/Code/External/journalcheckertool/
 
 
 JAC_PREF_ORDER = ["doaj"]
+
+
+ES17_HOST = "http://localhost:9200"
+ES17_INDEX_PREFIX = 'jct'
+ES17_INDEX_SUFFIX = 'dev'
+ES17_INDEX_SUFFIX_DATE_FORMAT = "%Y%m%d%H%M%S"
+ES17_KEEP_OLD_INDICES = 2
+ES17_DEFAULT_MAPPING = {
+    "dynamic_templates": [
+        {
+            "default": {
+                "match": "*",
+                "match_mapping_type": "string",
+                "mapping": {
+                    "type": "multi_field",
+                    "fields": {
+                        "{name}": {"type": "{dynamic_type}", "index": "analyzed", "store": "no"},
+                        "exact": {"type": "{dynamic_type}", "index": "not_analyzed", "store": "yes"}
+                    }
+                }
+            }
+        }
+    ]
+}

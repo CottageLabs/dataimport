@@ -30,7 +30,7 @@ def run(mode:str, targets:tuple, stage:str=None, full_pipeline:bool=True):
     processor(targets, stage, full_pipeline)
 
 
-def resolve(targets, stage=None, full_pipeline=True):
+def resolve(datasource_names, stage=None, full_pipeline=True):
     if stage is None:
         stage = Resolver.RESOLVE_PIPELINE[-1]
 
@@ -42,16 +42,16 @@ def resolve(targets, stage=None, full_pipeline=True):
 
     dsf = DatasourceFactory(settings)
 
-    if targets[0] == "_all":
+    if datasource_names[0] == "_all":
         datasources = dsf.get_all_datasources()
     else:
-        datasources = [dsf.get_datasource(t) for t in targets]
+        datasources = [dsf.get_datasource(t) for t in datasource_names]
 
     resolver = Resolver(settings)
     resolver.resolve(datasources, force_update=True, stages=stages)
 
 
-def assemble(targets, stage=None, full_pipeline=True):
+def assemble(product_names, stage=None, full_pipeline=True):
     if stage is None:
         stage = Assembler.ASSEMBLE_PIPELINE[-1]
 
@@ -63,16 +63,16 @@ def assemble(targets, stage=None, full_pipeline=True):
 
     pf = ProductFactory(settings)
 
-    if targets[0] == "_all":
+    if product_names[0] == "_all":
         products = pf.get_all_products()
     else:
-        products = [pf.get_product(target) for target in targets]
+        products = [pf.get_product(pn) for pn in product_names]
 
     assembler = Assembler(settings)
     assembler.assemble(products, force_update=False, stages=stages)
 
 
-def load(targets, stage=None, full_pipeline=True):
+def load(product_names, stage=None, full_pipeline=True):
     if stage is None:
         stage = Loader.LOAD_PIPELINE[-1]
 
@@ -84,22 +84,13 @@ def load(targets, stage=None, full_pipeline=True):
 
     pf = ProductFactory(settings)
 
-    if targets[0] == "_all":
+    if product_names[0] == "_all":
         products = pf.get_all_products()
     else:
-        products = [pf.get_product(target) for target in targets]
+        products = [pf.get_product(pn) for pn in product_names]
 
-
-    if full_pipeline:
-        index(targets)
-
-    for t in targets:
-        load_type = settings.INDEX_LOADERS[t]
-        if load_type == "es":
-            loader.index_latest_with_alias(t, settings.ES_INDEX_SUFFIX)
-        elif load_type == "file":
-            loader.load_to_file(t)
-
+    loader = Loader(settings)
+    loader.load(products, force_update=False, stages=stages)
 
 
 MODE_MAP = {

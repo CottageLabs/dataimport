@@ -28,7 +28,7 @@ class Resolver(object):
         if force_update or self.requires_update(datasource):
             datasource.file_manager.fresh()
             datasource.fetch()
-            datasource.file_manager.cleanup()
+            datasource.cleanup()
 
     def analyse(self, datasource):
         datasource.file_manager.current()

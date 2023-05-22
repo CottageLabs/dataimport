@@ -4,11 +4,14 @@ from contextlib import contextmanager
 
 
 class FileManager(object):
-    def __init__(self, config, storage_id, instance=None):
+    def __init__(self, config, storage_id, instance=None, base_dir=None):
         self.config = config
 
         self._storage_id = storage_id
-        self._dir = config.STORE_SCOPES[storage_id]
+
+        self._dir = base_dir
+        if self._dir is None:
+            self._dir = config.STORE_SCOPES[storage_id]
 
         self._instance = instance
         if instance is None:

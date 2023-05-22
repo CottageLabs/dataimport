@@ -5,6 +5,8 @@ from dataimport.datasource_factory import DatasourceFactory
 
 
 class Product(object):
+    FORMATS = []
+
     def __init__(self, config, id):
         self.id = id
         self.config = config
@@ -26,3 +28,12 @@ class Product(object):
 
     def assemble(self):
         raise NotImplementedError()
+
+    def provides_format(self, format_class):
+        return format_class in self.FORMATS
+
+    def get_format(self, format_class):
+        raise NotImplementedError()
+
+    def cleanup(self):
+        self.file_manager.cleanup()
