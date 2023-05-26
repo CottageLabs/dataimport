@@ -42,6 +42,7 @@ class FileManager(object):
         os.makedirs(self._instance, exist_ok=True)
 
     def file_path(self, filename):
+        self.activate()
         return os.path.join(self._instance, filename)
 
     @contextmanager

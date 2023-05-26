@@ -17,15 +17,12 @@ class JAC(Product):
     def analyse(self):
         self.log("Analysing data for journal autocomplete")
 
-        sources = self.config.PRODUCT_SOURCES.get(self.id, [])
-        dsf = DatasourceFactory(self.config)
-
+        sources = self.get_sources()
         issns = []
         titles = []
         pubs = []
-        for s in sources:
-            ds = dsf.get_datasource(s)
 
+        for ds in sources:
             if ds.provides_analysis(CoincidentISSNs):
                 issns.append(ds.analysis(CoincidentISSNs))
 

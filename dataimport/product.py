@@ -15,9 +15,14 @@ class Product(object):
     def log(self, msg):
         logger.log(msg, self.id.upper())
 
+    def get_sources(self):
+        source_ids = self.config.PRODUCT_SOURCES.get(self.id, [])
+        dsf = DatasourceFactory(self.config)
+        return [dsf.get_datasource(s) for s in source_ids]
+
     def gather(self, force_update=False):
         sources = self.config.PRODUCT_SOURCES.get(self.id, [])
-        self.log('Gathering data for from sources: {x}'.format(x=",".join(sources)))
+        self.log('Gathering data from sources: {x}'.format(x=",".join(sources)))
         resolver = Resolver(self.config)
         dsf = DatasourceFactory(self.config)
         datasources = [dsf.get_datasource(s) for s in sources]
