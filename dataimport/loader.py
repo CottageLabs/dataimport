@@ -28,6 +28,7 @@ class Loader(object):
                 self.loads(products)
 
     def assemble(self, products, force_update=False):
+        self.log("Assembling data for products: {x}".format(x=",".join([p.id for p in products])))
         assembler = Assembler(self.config)
         assembler.assemble(products, force_update=force_update)
 
@@ -37,6 +38,7 @@ class Loader(object):
             targets = tf.get_targets(product)
 
             for target in targets:
+                self.log("Preparing target '{x}' for product '{y}'".format(x=target.id, y=product.id))
                 target.file_manager.fresh()
                 target.prepare()
                 target.cleanup()
@@ -47,6 +49,7 @@ class Loader(object):
             targets = tf.get_targets(product)
 
             for target in targets:
-                target.file_manager.current()
+                self.log("Loading target '{x}' for product '{y}'".format(x=target.id, y=product.id))
+                target.file_manager.current(make_fresh=True)
                 target.load()
                 target.cleanup()

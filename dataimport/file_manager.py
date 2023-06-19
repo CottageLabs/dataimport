@@ -3,6 +3,10 @@ import os, shutil
 from contextlib import contextmanager
 
 
+class FileManagerException(Exception):
+    pass
+
+
 class FileManager(object):
     def __init__(self, config, storage_id, instance=None, base_dir=None):
         self.config = config
@@ -17,23 +21,34 @@ class FileManager(object):
         if instance is None:
             self.current()
 
+    @property
+    def current_instance_name(self):
+        return self._instance
+
     def fresh(self):
         instance = datetime.strftime(datetime.utcnow(), self.config.DIR_DATE_FORMAT)
         self._instance = os.path.join(self._dir, instance)
+        os.makedirs(self._instance, exist_ok=True)
 
-    def current(self):
+    def current(self, make_fresh=False):
         dirs = []
         if not os.path.exists(self._dir):
-            self.fresh()
-            return
+            if make_fresh:
+                self.fresh()
+                return
+            else:
+                raise FileManagerException("Current directory does not exist, and make_fresh is False")
 
         for entry in os.listdir(self._dir):
             if os.path.isdir(os.path.join(self._dir, entry)):
                 dirs.append(entry)
 
         if len(dirs) == 0:
-            self.fresh()
-            return
+            if make_fresh:
+                self.fresh()
+                return
+            else:
+                raise FileManagerException("Current directory does not exist, and make_fresh is False")
 
         dirs.sort(reverse=True)
         self._instance = os.path.join(self._dir, dirs[0])

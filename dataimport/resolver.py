@@ -1,7 +1,11 @@
-from dataimport.file_manager import FileManager
+from dataimport.file_manager import FileManager, FileManagerException
 from dataimport import logger
 
 from datetime import datetime, timedelta
+
+
+class ResolverException(Exception):
+    pass
 
 
 class Resolver(object):
@@ -26,12 +30,21 @@ class Resolver(object):
 
     def fetch(self, datasource, force_update=False):
         if force_update or self.requires_update(datasource):
+            self.log("Updating datasource '{x}'".format(x=datasource.id))
             datasource.file_manager.fresh()
             datasource.fetch()
             datasource.cleanup()
+        else:
+            self.log("Datasource '{x}' does not require update".format(x=datasource.id))
 
     def analyse(self, datasource):
-        datasource.file_manager.current()
+        try:
+            datasource.file_manager.current(make_fresh=False)
+        except FileManagerException:
+            msg = "Unable to run analyse stage on {x}, as there is no current data".format(x=datasource.id)
+            self.log(msg)
+            raise ResolverException(msg)
+        self.log("Anaslysing datasource '{x}'".format(x=datasource.id))
         datasource.analyse()
 
     def _max_age(self, datasource):
