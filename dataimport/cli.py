@@ -77,7 +77,7 @@ def assemble(config, product_names, stage=None, full_pipeline=True):
     assembler.assemble(products, force_update=False, stages=stages)
 
 
-def load(config, product_names, stage=None, full_pipeline=True):
+def load(config, target_names, stage=None, full_pipeline=True):
     if stage is None:
         stage = Loader.LOAD_PIPELINE[-1]
 
@@ -87,15 +87,15 @@ def load(config, product_names, stage=None, full_pipeline=True):
         final = Loader.LOAD_PIPELINE.index(stage)
         stages = Loader.LOAD_PIPELINE[0:final + 1]
 
-    pf = ProductFactory(config)
+    tf = TargetFactory(config)
 
-    if product_names[0] == "_all":
-        products = pf.get_all_products()
+    if target_names[0] == "_all":
+        targets = tf.get_all_targets()
     else:
-        products = [pf.get_product(pn) for pn in product_names]
+        targets = [tf.get_target(tn) for tn in target_names]
 
     loader = Loader(config)
-    loader.load(products, force_update=False, stages=stages)
+    loader.load(targets, force_update=False, stages=stages)
 
 
 MODE_MAP = {
