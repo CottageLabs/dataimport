@@ -19,7 +19,7 @@ class FileManager(object):
 
         self._instance = instance
         if instance is None:
-            self.current()
+            self.current(make_fresh=True)
 
     @property
     def current_instance_name(self):
