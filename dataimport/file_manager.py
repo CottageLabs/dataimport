@@ -28,7 +28,7 @@ class FileManager(object):
     def fresh(self):
         instance = datetime.strftime(datetime.utcnow(), self.config.DIR_DATE_FORMAT)
         self._instance = os.path.join(self._dir, instance)
-        os.makedirs(self._instance, exist_ok=True)
+        # os.makedirs(self._instance, exist_ok=True)
 
     def current(self, make_fresh=False):
         dirs = []
