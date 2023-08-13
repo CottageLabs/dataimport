@@ -15,38 +15,34 @@ class Loader(object):
     def log(self, msg):
         logger.log(msg, "LOADER")
 
-    def load(self, products, force_update=False, stages=False):
+    def load(self, targets, force_update=False, stages=False):
         if not stages:
             stages = self.LOAD_PIPELINE
 
+        # Note that in the loader we go stage by stage rather than target
+        # by target, in order to run the final load stage as close together
+        # as possible for all targets
         for stage in stages:
-            if stage == "assemble":
-                self.assemble(products, force_update)
-            elif stage == "prepare":
-                self.prepare(products)
-            elif stage == "load":
-                self.loads(products)
-
-    def assemble(self, products, force_update=False):
-        assembler = Assembler(self.config)
-        assembler.assemble(products, force_update=force_update)
-
-    def prepare(self, products):
-        tf = TargetFactory(self.config)
-        for product in products:
-            targets = tf.get_targets(product)
-
             for target in targets:
-                target.file_manager.fresh()
-                target.prepare()
-                target.cleanup()
+                if stage == "assemble":
+                    self.assemble(target, force_update)
+                elif stage == "prepare":
+                    self.prepare(target)
+                elif stage == "load":
+                    self.loads(target)
 
-    def loads(self, products):
-        tf = TargetFactory(self.config)
-        for product in products:
-            targets = tf.get_targets(product)
+    def assemble(self, target, force_update=False):
+        self.log("Assembling products for '{x}'".format(x=target.id))
+        target.assemble(force_update=force_update)
 
-            for target in targets:
-                target.file_manager.current()
-                target.load()
-                target.cleanup()
+    def prepare(self, target):
+        target.file_manager.fresh()
+        self.log("Starting fresh preparation for '{x}' in {y}".format(x=target.id, y=target.file_manager.current_instance_name))
+        target.prepare()
+        target.cleanup()
+
+    def loads(self, target):
+        target.file_manager.current(make_fresh=True)
+        self.log("Loading target '{x}' from {y}".format(x=target.id, y=target.file_manager.current_instance_name))
+        target.load()
+        target.cleanup()
