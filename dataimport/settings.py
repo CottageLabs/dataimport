@@ -6,7 +6,8 @@ RESOURCES = rel2abs(__file__, "..", "resources")
 TARGET_DIRS = os.path.join(DATABASES, "targets")
 
 DATASOURCES = {
-    "doaj": "dataimport.datasources.doaj.DOAJ"
+    "doaj": "dataimport.datasources.doaj.DOAJ",
+    "zenodo": "dataimport.datasources.zenodo.Zenodo"
 }
 
 PRODUCTS = {
@@ -14,7 +15,8 @@ PRODUCTS = {
 }
 
 TARGETS = {
-    "es17": "dataimport.targets.es17.ES17"
+    "es17": "dataimport.targets.es17.ES17",
+    "zenodo": "dataimport.targets.zenodo.Zenodo"
 }
 
 PRODUCT_SOURCES = {
@@ -43,11 +45,8 @@ STORE_KEEP_HISORIC = {
 }
 
 
-
-
 DOAJ_PUBLIC_DATA_DUMP = "https://doaj.org/public-data-dump/journal"
 DOAJ_PUBLIC_DATA_DUMP_KEYFILE = "/home/richard/Code/External/journalcheckertool/Importer/keyfiles/doaj_public_data_dump.txt"
-
 
 JAC_PREF_ORDER = ["doaj"]
 
@@ -74,3 +73,12 @@ ES17_DEFAULT_MAPPING = {
         }
     ]
 }
+
+# ZENODO
+ZENODO_URL = "https://zenodo.org/api/"
+default_search = "records?size=20&communities=covid-19&type=dataset&all_versions=false&status=published&q=access_right:open"
+excl_terms = [
+    "SARS-CoV-2", "inhibitor", "cytokine", "vitro", "cell", "pneumonia", "scans", "genes", "cough", "Diabetes",
+    "antibodies", "ARDS", "Lung", "Anthropometric", "proteins", "sequencing", "biopsies", "genome", "pulmonary"
+]
+ZENODO_SEARCH = default_search + " -" + " -".join(excl_terms)
