@@ -44,7 +44,7 @@ class Resolver(object):
             msg = "Unable to run analyse stage on {x}, as there is no current data".format(x=datasource.id)
             self.log(msg)
             raise ResolverException(msg)
-        self.log("Anaslysing datasource '{x}'".format(x=datasource.id))
+        self.log("Analysing datasource '{x}'".format(x=datasource.id))
         datasource.analyse()
 
     def _max_age(self, datasource):
