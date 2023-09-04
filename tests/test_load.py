@@ -2,7 +2,6 @@ import json
 import os
 import pathlib as pl
 import re
-import shutil
 import sys
 
 import requests
@@ -143,12 +142,3 @@ class TestTarget(TestDataimport):
         self.assertEqual(result.exit_code, 0)
         self.assertTrue(dspace_item_exists(result.output))
         self.assertRegex(result.output, r"Loading products for 'mocktarget'")
-
-    @classmethod
-    def tearDownClass(cls) -> None:
-        """
-        The teardown class is only overwritten here because this test and the assemble
-        depend on the output of the previous mode.
-        """
-        for scope in STORE_SCOPES:
-            shutil.rmtree(STORE_SCOPES[scope])
