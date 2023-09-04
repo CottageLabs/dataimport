@@ -1,12 +1,9 @@
 import csv
-import os
-import pathlib as pl
 import shutil
 
 from dataimport.analysis import Analysis
 from dataimport.cli import entry_point
 from dataimport.datasource import Datasource
-from tests.mock_settings import STORE_SCOPES
 from tests.util import TestDataimport
 
 
@@ -53,6 +50,7 @@ class MockDatasource(Datasource):
 
 
 class TestDatasource(TestDataimport):
+    mode = 'mockdatasource'
 
     def test_fetch(self):
         """
@@ -60,13 +58,11 @@ class TestDatasource(TestDataimport):
         """
         args = ['resolve', 'mockdatasource', '-s', 'fetch', '-o',  '-c', 'tests.mock_settings']
         result = self.runner.invoke(entry_point, args)
-        # Assuming we need the most newly created directory
-        datasource_dir = os.path.join(STORE_SCOPES['mockdatasource'], os.listdir(STORE_SCOPES['mockdatasource'])[0])
 
         # Expect successful execution
         self.assertEqual(result.exit_code, 0)
         # Expect the file to exist
-        self.assertTrue(pl.Path(datasource_dir + '/origin.csv').resolve().is_file())
+        self.assertIsFile('origin.csv')
         # Expect the action to be logged
         self.assertRegex(result.output, r'Copied origin.csv to ')
         # Expect that no other action is logged
@@ -77,12 +73,10 @@ class TestDatasource(TestDataimport):
         Test the whole pipeline.
         """
         result = self.runner.invoke(entry_point, ['resolve', 'mockdatasource', '-c', 'tests.mock_settings'])
-        # Assuming we need the most newly created directory
-        datasource_dir = os.path.join(STORE_SCOPES['mockdatasource'], os.listdir(STORE_SCOPES['mockdatasource'])[0])
 
         # Expect successful execution
         self.assertEqual(result.exit_code, 0)
-        # Expect the original datsource file to exist
-        self.assertTrue(pl.Path(datasource_dir + '/origin.csv').resolve().is_file())
+        # Expect the original datasource file to exist
+        self.assertIsFile('origin.csv')
         # Expect also the analysed file to exist
-        self.assertTrue(pl.Path(datasource_dir + '/analysed.csv').resolve().is_file())
+        self.assertIsFile('analysed.csv')

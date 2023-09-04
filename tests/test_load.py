@@ -1,6 +1,4 @@
 import json
-import os
-import pathlib as pl
 import re
 import sys
 
@@ -10,7 +8,7 @@ from dataimport.cli import entry_point
 from dataimport.formats.json_feed import JSONFeed
 from dataimport.target import Target
 from tests.fixtures import DSPACE_ITEM_TEMPLATE
-from tests.mock_settings import STORE_SCOPES, DSPACE_API, DSPACE_USER, DSPACE_PASSWORD
+from tests.mock_settings import DSPACE_API, DSPACE_USER, DSPACE_PASSWORD
 from tests.util import TestDataimport
 
 session = None
@@ -33,6 +31,48 @@ def dspace_item_exists(output: str) -> bool:
 
 
 class MockTarget(Target):
+    def prepare(self):
+        """
+        This method gets the data from the product and writes to a json file.
+        """
+        self.log("Preparing products for '{x}'".format(x=self.id))
+        products = self.get_products()
+
+        data_feeds = []
+        for product in products:
+            if product.provides_format(JSONFeed):
+                data_feeds.append(product.get_format(JSONFeed))
+
+        with self.file_manager.output_file('load.json') as o:
+            for d in data_feeds[0].entries():
+                o.write(json.dumps(d))
+
+    def load(self):
+        """
+        This method prepars a record for upload to a DSpace => 7 instance containing
+        a dc.description value taken from the original loaded data.
+        """
+        self.log("Loading products for '{x}'".format(x=self.id))
+        with self.file_manager.input_file('load.json') as o:
+            data = json.loads(o.read())
+
+        data = ", ".join([str(i) for i in data['numbers'][0]])
+
+        # Add the even numbers to a metadata property
+        DSPACE_ITEM_TEMPLATE['metadata']['dc.description'] = [
+            {
+                "value": data,
+                "language": "en",
+                "authority": None,
+                "confidence": -1
+            }
+        ]
+
+        with self.file_manager.output_file('dspace.json') as o:
+            o.write(json.dumps(DSPACE_ITEM_TEMPLATE))
+
+
+class MockDSpaceTarget(Target):
     def prepare(self):
         """
         This method gets the data from the product and writes to a json file.
@@ -119,6 +159,7 @@ class MockTarget(Target):
 
 
 class TestTarget(TestDataimport):
+    mode = 'mocktarget'
 
     def test_prepare(self):
         """
@@ -126,11 +167,9 @@ class TestTarget(TestDataimport):
         """
         args = ['load', 'mocktarget', '-s', 'prepare', '-o', '-c', 'tests.mock_settings']
         result = self.runner.invoke(entry_point, args)
-        # Assuming we need the most newly created directory
-        target_dir = os.path.join(STORE_SCOPES['mocktarget'], os.listdir(STORE_SCOPES['mocktarget'])[0])
 
         self.assertEqual(result.exit_code, 0)
-        self.assertTrue(pl.Path(target_dir + '/load.json').resolve().is_file())
+        self.assertIsFile('load.json')
         self.assertRegex(result.output, r"Preparing products for 'mocktarget'")
 
     def test_all(self):
@@ -140,5 +179,19 @@ class TestTarget(TestDataimport):
         result = self.runner.invoke(entry_point, ['load', 'mocktarget', '-c', 'tests.mock_settings'])
 
         self.assertEqual(result.exit_code, 0)
-        self.assertTrue(dspace_item_exists(result.output))
+        self.assertIsFile('dspace.json')
         self.assertRegex(result.output, r"Loading products for 'mocktarget'")
+
+
+'''class TestDSpaceTarget(TestDataimport):
+    mode = 'mockdspacetarget'
+
+    def test_all_dspace(self):
+        """
+        Test the whole pipeline and upload to DSpace.
+        """
+        result = self.runner.invoke(entry_point, ['load', 'mockdspacetarget', '-c', 'tests.mock_settings'])
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertTrue(dspace_item_exists(result.output))
+        self.assertRegex(result.output, r"Loading products for 'mockdspacetarget'")'''

@@ -14,7 +14,8 @@ PRODUCTS = {
 }
 
 TARGETS = {
-    "mocktarget": "tests.test_load.MockTarget"
+    "mocktarget": "tests.test_load.MockTarget",
+    "mockdspacetarget": "tests.test_load.MockDSpaceTarget"
 }
 
 PRODUCT_SOURCES = {
@@ -22,7 +23,8 @@ PRODUCT_SOURCES = {
 }
 
 TARGET_PRODUCTS = {
-    "mocktarget": ["mockproduct"]
+    "mocktarget": ["mockproduct"],
+    "mockdspacetarget": ['mockproduct']
 }
 
 DIR_DATE_FORMAT = "%Y-%m-%d_%H%M"
@@ -36,13 +38,15 @@ RESOLVER_MAX_AGE = {
 STORE_SCOPES = {
     "mockdatasource": os.path.join(DATABASES, "datasources", "mockdatasource"),
     "mockproduct": os.path.join(DATABASES, "products", "mockproduct"),
-    "mocktarget": os.path.join(DATABASES, "targets", "mocktarget")
+    "mocktarget": os.path.join(DATABASES, "targets", "mocktarget"),
+    "mockdspacetarget": os.path.join(DATABASES, "targets", "mocktarget")
 }
 
 STORE_KEEP_HISTORIC = {
     "mockdatasource": 3,
     "mockproduct": 3,
     "mocktarget": 3,
+    "mockdspacetarget": 3,
 }
 
 ##########################################

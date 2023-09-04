@@ -34,7 +34,7 @@ for entry into a **target**, it's output. And **load** will deliver the data to 
 
 # Tests
 
-Tests are defines in the `tests/` directory. This is really an integration test that takes the csv file
+Tests are defines in the `tests/` directory. This is a unit test that takes the csv file
 `tests/origin.csv` that contains following data:
 
 |a|b|c|
@@ -54,8 +54,10 @@ Tests are defines in the `tests/` directory. This is really an integration test 
 {"numbers": [[4, 8, 12, 16, 20]]}
 ```
 
-3. The load stage will take the json data append to a DSpace item template and upload it to the
-   [public sandbox instance](https://demo.dspace.org/) via REST API calls.
+3. The load stage will take the json data append to a DSpace item template and sava as `dspace.json`. 
+A commented out version of the test is an integration test that uploads the json to the
+[public sandbox instance](https://demo.dspace.org/) via REST API calls. You can run it by uncommenting the 
+`TestDSpaceTarget` class in `test_load.py`.
 
 
 To run unit tests do:

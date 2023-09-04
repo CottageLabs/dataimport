@@ -1,13 +1,10 @@
 import csv
 import json
-import os
-import pathlib as pl
 
 from dataimport.cli import entry_point
 from dataimport.format import Format
 from dataimport.formats.json_feed import JSONFeed, LineByLineJSON
 from dataimport.product import Product
-from tests.mock_settings import STORE_SCOPES
 from tests.test_resolve import MockAnalysis
 from tests.util import TestDataimport
 
@@ -75,6 +72,7 @@ class MockProduct(Product):
 
 
 class TestAssemble(TestDataimport):
+    mode = 'mockproduct'
 
     def test_analyse(self):
         """
@@ -82,13 +80,11 @@ class TestAssemble(TestDataimport):
         """
         args = ['assemble', 'mockproduct', '-s', 'analyse', '-o',  '-c', 'tests.mock_settings']
         result = self.runner.invoke(entry_point, args)
-        # Assuming the most newly created will be first, should anyway just be one directory there
-        product_dir = os.path.join(STORE_SCOPES['mockproduct'], os.listdir(STORE_SCOPES['mockproduct'])[0])
 
         # Expect successful execution
         self.assertEqual(result.exit_code, 0)
         # Expect the analysed file from the resolve stage to be present
-        self.assertTrue(pl.Path(product_dir + '/analysed.csv').resolve().is_file())
+        self.assertIsFile('analysed.csv')
         # Expect the action to be logged
         self.assertRegex(result.output, r'Writing even numbers to ')
 
@@ -98,15 +94,13 @@ class TestAssemble(TestDataimport):
         """
         args = ['assemble', 'mockproduct', '-s', 'assemble', '-o', '-c', 'tests.mock_settings']
         result = self.runner.invoke(entry_point, args)
-        # Assuming we need the most newly created directory
-        product_dir = os.path.join(STORE_SCOPES['mockproduct'], os.listdir(STORE_SCOPES['mockproduct'])[0])
 
         # Expect successful execution
         self.assertEqual(result.exit_code, 0)
         # Expect the analysed file from the resolve stage to be present
-        self.assertTrue(pl.Path(product_dir + '/analysed.csv').resolve().is_file())
+        self.assertIsFile('analysed.csv')
         # Expect the assembled file to be present
-        self.assertTrue(pl.Path(product_dir + '/mapping.json').resolve().is_file())
+        self.assertIsFile('mapping.json')
         # Expect the actions to be logged
         self.assertRegex(result.output, r'Assembling json data')
         self.assertNotRegex(result.output, r'Writing even numbers to ')
@@ -117,14 +111,12 @@ class TestAssemble(TestDataimport):
         """
         args = ['assemble', 'mockproduct', '-c', 'tests.mock_settings']
         result = self.runner.invoke(entry_point, args)
-        # Assuming we need the most newly created directory
-        product_dir = os.path.join(STORE_SCOPES['mockproduct'], os.listdir(STORE_SCOPES['mockproduct'])[0])
 
         # Expect successful execution
         self.assertEqual(result.exit_code, 0)
         # Expect the analysed file from the resolve stage and assembled to be present
-        self.assertTrue(pl.Path(product_dir + '/analysed.csv').resolve().is_file())
-        self.assertTrue(pl.Path(product_dir + '/mapping.json').resolve().is_file())
+        self.assertIsFile('analysed.csv')
+        self.assertIsFile('mapping.json')
         # Expect preceding actions to be logged
         self.assertRegex(result.output, r"Gathering data for 'mockproduct'")
         self.assertRegex(result.output, r"Analysing datasource 'mockdatasource'")
