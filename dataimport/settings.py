@@ -36,7 +36,7 @@ STORE_SCOPES = {
     "jac": os.path.join(DATABASES, "products", "jac")
 }
 
-STORE_KEEP_HISORIC = {
+STORE_KEEP_HISTORIC = {
     "doaj": 3,
     "jac": 5,
     "es17": 5
