@@ -98,7 +98,7 @@ class FileManager(object):
             if os.path.isdir(os.path.join(self._dir, entry)):
                 dirs.append(entry)
 
-        keep_historic = self.config.STORE_KEEP_HISORIC[self._storage_id]
+        keep_historic = self.config.STORE_KEEP_HISTORIC[self._storage_id]
 
         if len(dirs) <= keep_historic:
             return
