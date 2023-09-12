@@ -7,27 +7,40 @@ TARGET_DIRS = os.path.join(DATABASES, "targets")
 
 DATASOURCES = {
     "doaj": "dataimport.datasources.doaj.DOAJ",
-    "zenodo": "dataimport.datasources.zenodo.Zenodo"
+    "zenodo": "dataimport.datasources.zenodo.Zenodo",
+    "ons": "dataimport.datasources.ons.ONS"
 }
 
 PRODUCTS = {
-    "jac": "dataimport.assemblers.jac.JAC"
+    "jac": "dataimport.assemblers.jac.JAC",
+    "datacite": "dataimport.products.datacite.Datacite"
 }
 
 TARGETS = {
     "es17": "dataimport.targets.es17.ES17",
-    "zenodo": "dataimport.targets.zenodo.Zenodo"
+    # "ons": "dataimport.targets.ons.ONS",
+    # "zenodo": "dataimport.targets.zenodo.Zenodo"
+    "invenio": "dataimport.targets.invenio.Invenio"
 }
 
 PRODUCT_SOURCES = {
-    "jac": ["doaj"]
+    "jac": ["doaj"],
+    "eui": ["ons"],
+    "datacite": ["ons"]
 }
 
 PRODUCT_TARGETS = {
-    "jac": [{"id": "es17", "dir": os.path.join(TARGET_DIRS, "jac__es17")}]
+    "jac": [{"id": "es17", "dir": os.path.join(TARGET_DIRS, "jac__es17")}],
+    "eui": [{"id": "invenio", "dir": os.path.join(TARGET_DIRS, "eui__invenio")}]
+}
+
+
+TARGET_PRODUCTS = {
+    "invenio": ["datacite"]
 }
 
 DIR_DATE_FORMAT = "%Y-%m-%d_%H%M"
+ORIGIN_SUFFIX = '-origin'
 
 RESOLVER_MAX_AGE = {
     "doaj": 60 * 60 * 24 * 7
@@ -35,13 +48,19 @@ RESOLVER_MAX_AGE = {
 
 STORE_SCOPES = {
     "doaj": os.path.join(DATABASES, "datasources", "doaj"),
-    "jac": os.path.join(DATABASES, "products", "jac")
+    "jac": os.path.join(DATABASES, "products", "jac"),
+    "ons": os.path.join(DATABASES, "datasources", "ons"),
+    "invenio": os.path.join(DATABASES, "targets", "invenio"),
+    "datacite": os.path.join(DATABASES, "products", "datacite")
 }
 
 STORE_KEEP_HISTORIC = {
     "doaj": 3,
     "jac": 5,
-    "es17": 5
+    "es17": 5,
+    "ons": 1,
+    "invenio": 1,
+    "datacite": 1
 }
 
 
@@ -82,3 +101,12 @@ excl_terms = [
     "antibodies", "ARDS", "Lung", "Anthropometric", "proteins", "sequencing", "biopsies", "genome", "pulmonary"
 ]
 ZENODO_SEARCH = default_search + " -" + " -".join(excl_terms)
+
+
+# ONS
+
+ONS_URL = 'https://www.ons.gov.uk'
+ONS_SEARCH = '/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datalist?sortBy=release_date&filter=datasets&size=1000'
+
+INVENIO_API = "https://127.0.0.1:5000"
+INVENIO_TOKEN = "d6491ZDfsjy716M74mWXqAyTq7lc1XyyYuSPWNLJ1I3gxWAGHEUqyv37JM58"

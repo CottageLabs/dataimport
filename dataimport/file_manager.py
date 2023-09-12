@@ -25,10 +25,20 @@ class FileManager(object):
     def current_instance_name(self):
         return self._instance
 
+    def list_ons_files(self, contains: str = None) -> list[str]:
+        if contains is None:
+            contains = self.config.ORIGIN_SUFFIX
+        return [f for f in os.listdir('/home/jabbi/PycharmProjects/dataimport/databases/datasources/ons/2023-08-30_1321') if contains in f]
+
+    def list_files(self, contains: str = None) -> list[str]:
+        if contains is None:
+            contains = self.config.ORIGIN_SUFFIX
+        return [f for f in os.listdir(self.current_instance_name) if contains in f]
+
     def fresh(self):
         instance = datetime.strftime(datetime.utcnow(), self.config.DIR_DATE_FORMAT)
         self._instance = os.path.join(self._dir, instance)
-        # os.makedirs(self._instance, exist_ok=True)
+        os.makedirs(self._instance, exist_ok=True)
 
     def current(self, make_fresh=False):
         dirs = []

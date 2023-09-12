@@ -10,8 +10,8 @@ class Datasource:
         self.config = config
         self.file_manager = FileManager(config, self.id)
 
-    def log(self, msg):
-        logger.log(msg, self.id.upper())
+    def log(self, msg, update: bool = False):
+        logger.log(msg, self.id.upper(), update)
 
     def fetch(self):
         raise NotImplementedError()
