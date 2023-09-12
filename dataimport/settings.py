@@ -18,8 +18,6 @@ PRODUCTS = {
 
 TARGETS = {
     "es17": "dataimport.targets.es17.ES17",
-    # "ons": "dataimport.targets.ons.ONS",
-    # "zenodo": "dataimport.targets.zenodo.Zenodo"
     "invenio": "dataimport.targets.invenio.Invenio"
 }
 
@@ -30,8 +28,7 @@ PRODUCT_SOURCES = {
 }
 
 PRODUCT_TARGETS = {
-    "jac": [{"id": "es17", "dir": os.path.join(TARGET_DIRS, "jac__es17")}],
-    "eui": [{"id": "invenio", "dir": os.path.join(TARGET_DIRS, "eui__invenio")}]
+    "jac": [{"id": "es17", "dir": os.path.join(TARGET_DIRS, "jac__es17")}]
 }
 
 
