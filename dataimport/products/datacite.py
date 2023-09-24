@@ -29,10 +29,12 @@ class Datacite(Product):
 
         """
         self.log("Preparing Datacite data")
+        outfile = self.file_manager.file_path("invenio.json")
 
         with self.file_manager.input_file("ons.json") as f:
             data = json.loads(f.read())
 
+        self.log(f'Writing to {outfile}')
         with self.file_manager.output_file('invenio.json') as f:
             f.write(json.dumps([get_invenio_record(self.config, d[1]) for d in data.items()]))
 

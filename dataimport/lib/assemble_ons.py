@@ -1,3 +1,4 @@
+from datetime import date
 from typing import List
 
 
@@ -7,10 +8,10 @@ def _get_new_creator(author: str, url: str) -> dict:
             "name": author,
             "type": "organizational",
             "identifiers": [
-                #{
+                # {
                 #    "scheme": "url",
                 #    "identifier": url
-                #}
+                # }
                 {
                     "scheme": "ror",
                     "identifier": "https://ror.org/021fhft25"
@@ -63,16 +64,11 @@ def get_alt_ids(full_record: dict):
     dl_urls = []
     for distrib in full_record.get('distribution', []):
         if distrib.get('@type') and distrib.get('@type') == 'DataDownload':
-
             dl_urls.append({
-                "identifier": distrib['contentUrl'],
-                "scheme": "url",
-                "relation_type": {
-                    "id": "issupplementedby",
-                },
-                "resource_type": {
-                    "id": "dataset"
-                }
+                "url": distrib['contentUrl'],
+                "title": distrib['title'] if 'title' in distrib else 'No title',
+                "size": distrib['size'] if 'size' in distrib else '',
+                "date_added": date.today().isoformat()
             })
 
     return dl_urls
@@ -89,11 +85,17 @@ def get_invenio_record(config, ons_json: dict) -> dict:
         "metadata": {
             # "subjects": [{'subject': kwd} for kwd in list(set(incoming_json.get('keywords', [])))],
             "languages": [{"id": "eng"}],
-            "subjects": [],
-            'locations': [{"features": [{"place": 'United Kingdom',
-                                         "identifiers": [{'scheme': 'iso3166', 'identifier': 'UK'}]
-                                         }]
-                           }]
+            'locations': {
+                "features": [{
+                    "place": "United Kingdom",
+                    "identifiers": [
+                        {
+                            "scheme": "geonames",
+                            "identifier": "2635167"
+                        }
+                    ]
+                }]
+            }
         }
     }
 
@@ -107,7 +109,10 @@ def get_invenio_record(config, ons_json: dict) -> dict:
 
     # Set name, description and publication date
     metadata['title'] = ons_json['name']
-    metadata['description'] = ons_json['description']
+
+    if ons_json['description']:
+        metadata['description'] = ons_json['description']
+
     metadata['publisher'] = ons_json.get('publisher').get('name')
     metadata['publication_date'] = ons_json.get('datePublished', '0001')[:10]
 
@@ -119,6 +124,6 @@ def get_invenio_record(config, ons_json: dict) -> dict:
         }
     ]
 
-    metadata['related_identifiers'] = get_alt_ids(ons_json)
+    invenio_record['custom_fields'] = {'datasets': get_alt_ids(ons_json)}
 
     return invenio_record
