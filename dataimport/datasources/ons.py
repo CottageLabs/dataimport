@@ -2,8 +2,6 @@ import copy
 import json
 import re
 
-import requests
-
 from dataimport.analyses.ons.extract_ons import ExtractONSDataFromJSON, ExtractONSData
 from dataimport.datasource import Datasource
 from dataimport.lib.http_util import rate_limited_req
@@ -37,10 +35,11 @@ class ONS(Datasource):
         """
         self.log("Loading from ONS query")
 
+        h = {'User-Agent': self.config.USER_AGENT}
+
         url = self.config.ONS_URL + self.config.ONS_SEARCH
-        resp = requests.get(url, headers={'User-Agent': 'My User Agent 1.0'})
+        resp = rate_limited_req('get', url, headers=h)
         soup = BeautifulSoup(str(resp.content), 'html.parser')
-        print(resp.status_code)
         datasets = [d for d in soup.select("#results div ul")[0] if isinstance(d, Tag)]
 
         for i, dataset in enumerate(datasets):
@@ -50,7 +49,7 @@ class ONS(Datasource):
             self.log(f'Fetching dataset {i}/{len(datasets)}', update=i-1 < len(datasets))
 
             nxt = self.config.ONS_URL + dataset_url
-            resp = rate_limited_req('get', url=nxt)
+            resp = rate_limited_req('get', url=nxt, headers=h)
             dataset_file = dataset_url.split('/')[-1] + self.config.ORIGIN_SUFFIX + '.html'
 
             with self.file_manager.output_file(dataset_file, mode="wb") as htmlfile:

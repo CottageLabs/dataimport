@@ -106,4 +106,6 @@ ONS_URL = 'https://www.ons.gov.uk'
 ONS_SEARCH = '/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datalist?sortBy=release_date&filter=datasets&size=1000'
 
 INVENIO_API = "https://127.0.0.1:5000"
-INVENIO_TOKEN = "d6491ZDfsjy716M74mWXqAyTq7lc1XyyYuSPWNLJ1I3gxWAGHEUqyv37JM58"
+INVENIO_TOKEN = "44WG4x53XwPInQK1o9YFXKp0QbcH4gzrN5IRBV9wksyjM5NXTJ0zyu8rFQLH"
+
+USER_AGENT = 'My User Agent 1.0'
