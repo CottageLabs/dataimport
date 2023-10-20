@@ -12,9 +12,10 @@ setup(
         "Deprecated==1.2.13",
         "Markdown==3.1.1",
         "wheel",
-        "PyYAML==6.0"
+        "PyYAML==6.0",
+        "python-slugify==8.0.1"
     ],
-    url='http://cottagelabs.com/',
+    url='https://cottagelabs.com/',
     author='Cottage Labs',
     author_email='us@cottagelabs.com',
     description='Generic, Auditable, Data import tool',

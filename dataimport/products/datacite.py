@@ -1,8 +1,48 @@
 import json
 
+from dataimport.analyses.acled.extract_acled import ExtractACLEDData
 from dataimport.analyses.ons.extract_ons import ExtractONSData
-from dataimport.lib.assemble_ons import get_invenio_record
+from dataimport.lib.assemble_datacite import get_invenio_record
 from dataimport.product import Product
+
+datacite_intermediary_schema = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "string"},  # unique id of the dataset
+        "source": {"type": "string"},  # unique id of the source
+        "name": {"type": "string"},  # human-readable name of dataset
+        "description": {"type": "string"},  # human-readable description of dataset,
+        "published": {"type": "string"},  # date dataset was published
+        "license": {"type": "string"},  # license dataset was published under
+        "locations": {"type": "object"},
+        "languages": {"type": "array"},
+        "publisher": {
+            "type": "object",  # information about the publisher
+            "properties": {
+                "name": {"type": "string"},  # publisher name
+                "id": {"type": "string"},  # either an URL or ROR id
+                "type": {"type": "string"},  # whether id is a URL or ROR
+            },
+            "required": ["name", "id", "type"],
+            "additionalProperties": False
+        },
+        "datasets": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "url": {"type": "string"},
+                    "size": {"type": "string"},
+                    "title": {"type": "string"},
+                },
+                "additionalProperties": False
+            }
+        },
+        "url": {"type": "string"}
+    },
+    "required": ["id", "source", "name", "description", "datasets"],
+    "additionalProperties": False
+}
 
 
 class Datacite(Product):
@@ -14,15 +54,16 @@ class Datacite(Product):
         the datasource and inserts into one file, ons.json.
         """
         self.log("Analysing data for Datacite")
-        sources = self.get_sources()
-        ons = []
+        datacite_records = []
 
-        for source in sources:
-            if source.provides_analysis(ExtractONSData):
-                ons.append(source.analysis(ExtractONSData))
+        with self.file_manager.output_file("datacite.json") as f:
+            for source in self.get_sources():
+                if source.provides_analysis(ExtractONSData):
+                    datacite_records.extend(source.analysis(ExtractONSData).entries())
+                if source.provides_analysis(ExtractACLEDData):
+                    datacite_records.extend(source.analysis(ExtractACLEDData).entries())
 
-        with self.file_manager.output_file("ons.json") as f:
-            f.write(ons[0].entries())
+            f.write(json.dumps(datacite_records))
 
     def assemble(self):
         """
@@ -31,12 +72,12 @@ class Datacite(Product):
         self.log("Preparing Datacite data")
         outfile = self.file_manager.file_path("invenio.json")
 
-        with self.file_manager.input_file("ons.json") as f:
+        with self.file_manager.input_file("datacite.json") as f:
             data = json.loads(f.read())
 
         self.log(f'Writing to {outfile}')
         with self.file_manager.output_file('invenio.json') as f:
-            f.write(json.dumps([get_invenio_record(self.config, d[1]) for d in data.items()]))
+            f.write(json.dumps([get_invenio_record(d) for d in data]))
 
     def assembled(self):
         with self.file_manager.input_file("invenio.json") as f:

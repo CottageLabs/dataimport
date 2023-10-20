@@ -1,4 +1,3 @@
-import copy
 import json
 import re
 
@@ -6,6 +5,9 @@ from dataimport.analyses.ons.extract_ons import ExtractONSDataFromJSON, ExtractO
 from dataimport.datasource import Datasource
 from dataimport.lib.http_util import rate_limited_req
 from bs4 import BeautifulSoup, Tag
+from jsonschema import validate
+
+from dataimport.products.datacite import datacite_intermediary_schema
 
 
 def get_file_size(text: str) -> str:
@@ -46,7 +48,7 @@ class ONS(Datasource):
             dataset_url = dataset.find('a').get('data-gtm-uri')
             # dataset_name = dataset.find('a').get('aria-label').strip()
 
-            self.log(f'Fetching dataset {i}/{len(datasets)}', update=i-1 < len(datasets))
+            self.log(f'Fetching dataset {i}/{len(datasets)}', update=i - 1 < len(datasets))
 
             nxt = self.config.ONS_URL + dataset_url
             resp = rate_limited_req('get', url=nxt, headers=h)
@@ -89,12 +91,35 @@ class ONS(Datasource):
 
                     # contact = soup.find('address')
                     # print(contact.text.strip().split('\n')[0].replace(' and', ',').replace('&', ',').replace(',,', ','))
-                    template = script['distribution'].pop()
+                    script['id'] = dataset
+                    script['source'] = self.id
+                    script['publisher'] = {
+                            'name': 'Office for National Statistics',
+                            'type': 'url',
+                            'id': 'https://www.ons.gov.uk/'}
+                    script['locations'] = {
+                        "place": "United Kingdom",
+                        "identifiers": [
+                            {
+                                "scheme": "geonames",
+                                "identifier": "2635167"
+                            }
+                        ]
+                    }
+                    script["languages"] = [{"id": "eng"}]
+                    del script['@context']
+                    del script['@type']
+                    script['published'] = script.pop('datePublished')[:10]
+                    del script['distribution']
+                    script['datasets'] = []  # script.pop('distribution')
+                    # template = script['datasets'].pop()
+                    # del template['@type']
+                    # self.log(template)
 
                     # Four datasets offer more than one format of the data, they are incorrectly
                     # formatted
                     if len(downloads) != len(download_descriptions):
-                        script['distribution'] = []
+                        script['datasets'] = []
                         # They will have 5 divs
                         divs = soup.findAll('div', {'class': 'show-hide'})[0].findChildren('div')
 
@@ -104,24 +129,28 @@ class ONS(Datasource):
 
                         for div in divs[1:]:
                             for download in [a for a in div.findAll('a') if a['href'] not in links]:
-                                template['contentUrl'] = self.config.ONS_URL + download['href']
+                                template = {}
+                                template['url'] = self.config.ONS_URL + download['href']
                                 template['size'] = get_file_size(download.text.strip())
                                 template['title'] = desc
-                                template['encodingFormat'] = download['href'][download['href'].rfind('.') + 1:]
-                                script['distribution'].append(template)
+                                # template['encodingFormat'] = download['href'][download['href'].rfind('.') + 1:]
+                                script['datasets'].append(template)
 
-                                template = copy.deepcopy(template)
+                                # template = copy.deepcopy(template)
                                 links.append(download['href'])
 
                     else:
                         for download, desc in zip(downloads, download_descriptions):
-                            template['contentUrl'] = self.config.ONS_URL + download['href']
+                            template = {}
+                            template['url'] = self.config.ONS_URL + download['href']
                             template['size'] = get_file_size(download.text.strip())
                             template['title'] = desc.text.strip()
-                            template['encodingFormat'] = download['href'][download['href'].rfind('.') + 1:]
-                            script['distribution'].append(template)
+                            # template['encodingFormat'] = download['href'][download['href'].rfind('.') + 1:]
+                            script['datasets'].append(template)
 
-                            template = copy.deepcopy(template)
+                            # template = copy.deepcopy(template)
+
+                    validate(script, datacite_intermediary_schema)
 
                     o.write(json.dumps(script))
 

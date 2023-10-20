@@ -22,7 +22,7 @@ class Product(object):
 
     def gather(self, force_update=False):
         sources = self.config.PRODUCT_SOURCES.get(self.id, [])
-        self.log('Gathering data from sources: {x}'.format(x=",".join(sources)))
+        self.log('Gathering data from sources: {x}'.format(x=", ".join(sources)))
         resolver = Resolver(self.config)
         dsf = DatasourceFactory(self.config)
         datasources = [dsf.get_datasource(s) for s in sources]

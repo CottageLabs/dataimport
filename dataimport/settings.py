@@ -8,7 +8,8 @@ TARGET_DIRS = os.path.join(DATABASES, "targets")
 DATASOURCES = {
     "doaj": "dataimport.datasources.doaj.DOAJ",
     "zenodo": "dataimport.datasources.zenodo.Zenodo",
-    "ons": "dataimport.datasources.ons.ONS"
+    "ons": "dataimport.datasources.ons.ONS",
+    "acled": "dataimport.datasources.acled.ACLED"
 }
 
 PRODUCTS = {
@@ -24,7 +25,7 @@ TARGETS = {
 PRODUCT_SOURCES = {
     "jac": ["doaj"],
     "eui": ["ons"],
-    "datacite": ["ons"]
+    "datacite": ["ons", "acled"]
 }
 
 PRODUCT_TARGETS = {
@@ -48,7 +49,8 @@ STORE_SCOPES = {
     "jac": os.path.join(DATABASES, "products", "jac"),
     "ons": os.path.join(DATABASES, "datasources", "ons"),
     "invenio": os.path.join(DATABASES, "targets", "invenio"),
-    "datacite": os.path.join(DATABASES, "products", "datacite")
+    "datacite": os.path.join(DATABASES, "products", "datacite"),
+    "acled": os.path.join(DATABASES, "datasources", "acled"),
 }
 
 STORE_KEEP_HISTORIC = {
@@ -57,7 +59,8 @@ STORE_KEEP_HISTORIC = {
     "es17": 5,
     "ons": 1,
     "invenio": 1,
-    "datacite": 1
+    "datacite": 1,
+    "acled": 1,
 }
 
 
@@ -106,6 +109,10 @@ ONS_URL = 'https://www.ons.gov.uk'
 ONS_SEARCH = '/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datalist?sortBy=release_date&filter=datasets&size=1000'
 
 INVENIO_API = "https://127.0.0.1:5000"
-INVENIO_TOKEN = "44WG4x53XwPInQK1o9YFXKp0QbcH4gzrN5IRBV9wksyjM5NXTJ0zyu8rFQLH"
+INVENIO_TOKEN = "v85Zh7HSh4qboK4xKqI65ETLQflV2FqDBvAgVW6aOdL0c6YEO6EG6ErCKjrn"
 
 USER_AGENT = 'My User Agent 1.0'
+
+# ACLED
+
+ACLED_URL = 'https://acleddata.com/analysis/covid-19-disorder-tracker/'

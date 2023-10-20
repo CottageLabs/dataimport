@@ -4,13 +4,13 @@ from typing import List
 from dataimport.analysis import Analysis
 
 
-class ExtractONSData(Analysis):
+class ExtractACLEDData(Analysis):
     pass
 
 
-class ExtractONSDataFromJSON(ExtractONSData):
+class ExtractACLEDDataFromJSON(ExtractACLEDData):
     def __init__(self, source_id, filepaths: List[str]):
-        super(ExtractONSDataFromJSON, self).__init__(source_id)
+        super(ExtractACLEDDataFromJSON, self).__init__(source_id)
         self._filepaths = filepaths
 
     def entries(self) -> str:
