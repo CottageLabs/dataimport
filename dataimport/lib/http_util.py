@@ -2,6 +2,8 @@ import time
 import requests
 from functools import wraps
 
+from requests import Response
+
 # Rate limit settings
 req_freq = 1  # 1 request per second
 req_seq = 0  # sequence of successful requests
@@ -45,7 +47,7 @@ def rate_limited(freq=float('inf')):
 
 
 @rate_limited(req_freq)
-def rate_limited_req(method, *args, **kwargs):
+def rate_limited_req(method, *args, **kwargs) -> Response:
     """ Retry a request if we hit the rate limit """
     try:
         resp = requests.request(method, *args, **kwargs, timeout=5)
