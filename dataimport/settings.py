@@ -9,7 +9,8 @@ DATASOURCES = {
     "doaj": "dataimport.datasources.doaj.DOAJ",
     "zenodo": "dataimport.datasources.zenodo.Zenodo",
     "ons": "dataimport.datasources.ons.ONS",
-    "acled": "dataimport.datasources.acled.ACLED"
+    "acled": "dataimport.datasources.acled.ACLED",
+    "europa": "dataimport.datasources.europa.EUROPA"
 }
 
 PRODUCTS = {
@@ -25,7 +26,7 @@ TARGETS = {
 PRODUCT_SOURCES = {
     "jac": ["doaj"],
     "eui": ["ons"],
-    "datacite": ["ons", "acled"]
+    "datacite": ["ons", "acled", "europa"]
 }
 
 PRODUCT_TARGETS = {
@@ -51,6 +52,7 @@ STORE_SCOPES = {
     "invenio": os.path.join(DATABASES, "targets", "invenio"),
     "datacite": os.path.join(DATABASES, "products", "datacite"),
     "acled": os.path.join(DATABASES, "datasources", "acled"),
+    "europa": os.path.join(DATABASES, "datasources", "europa"),
 }
 
 STORE_KEEP_HISTORIC = {
@@ -61,6 +63,7 @@ STORE_KEEP_HISTORIC = {
     "invenio": 1,
     "datacite": 1,
     "acled": 1,
+    "europa": 1,
 }
 
 
@@ -116,3 +119,9 @@ USER_AGENT = 'My User Agent 1.0'
 # ACLED
 
 ACLED_URL = 'https://acleddata.com/analysis/covid-19-disorder-tracker/'
+
+
+# EUROPA
+# Going with the default limit of 10 because some records contains massive information
+# leading to mbs for json per result file
+EUROPA_URL = 'https://data.europa.eu/api/hub/search/search?filter=dataset&facets={%22keywords%22:[%22covid-19%22]}&limit=10'
