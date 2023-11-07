@@ -23,16 +23,24 @@ def get_datasets(distributions: List) -> List:
              'title': get_if_english(d['title']) if 'title' in d else 'Untitled dataset'} for d in distributions]
 
 
+def get_publisher(result: dict) -> dict:
+    publisher = {'type': 'url'}
+
+    # There needs to be more granular publisher data and a publisher URL needs
+    # to be listed
+    if result['publisher'] is None or 'resource' not in result['publisher']:
+        publisher['name'] = result['catalog']['publisher']['name']
+        publisher['id'] = result['catalog']['publisher']['homepage']
+    else:
+        publisher['name'] = result['publisher']['name'] if 'name' in result['publisher'] else 'Untitled publisher'
+        publisher['id'] = result['publisher']['resource']
+
+    return publisher
+
+
 class EUROPA(Datasource):
     """
-    ONS provides a public API that unfortunately only seems to have a subset of datasets available.
-    General documentation at https://developer.ons.gov.uk/.
 
-    In a blog post from 2021 the question is asked "Why isn’t the data I want available?"
-    See: https://digitalblog.ons.gov.uk/2021/02/15/how-to-access-data-from-the-ons-beta-api/
-
-    The data we need is therefore scraped by accessing a page at ONS that lists all C19 related datasets
-    See the constant ONS_SEARCH in settings.
     """
     ANALYSES = [ExtractACLEDData]
 
@@ -85,8 +93,7 @@ class EUROPA(Datasource):
                         continue
 
                     europa_data = {'name': get_if_english(result['title']),
-                                   'publisher': {'name': result['catalog']['publisher']['name'],
-                                                 'type': 'url', 'id': result['catalog']['publisher']['homepage']},
+                                   'publisher': get_publisher(result),
                                    'id': result['id'],
                                    'source': self.id,
                                    'url': result['resource'],
@@ -112,5 +119,6 @@ class EUROPA(Datasource):
                         o.write(json.dumps(europa_data))
 
     def _extract_acled_data_analysis(self):
-        paths = [self.file_manager.file_path(p) for p in self.file_manager.list_files('.json') if self.config.ORIGIN_SUFFIX not in p]
+        paths = [self.file_manager.file_path(p) for p in self.file_manager.list_files('.json') if
+                 self.config.ORIGIN_SUFFIX not in p]
         return ExtractACLEDDataFromJSON(self.id, filepaths=paths)
