@@ -42,7 +42,6 @@ cache_communities = []
 
 
 def get_community(title: str) -> dict:
-    print(cache_communities)
     # If we have already fetched the community, then just return it
     if len([c for c in cache_communities if c['metadata']['title'] == title]):
         return [c for c in cache_communities if c['metadata']['title'] == title][0]
@@ -89,7 +88,7 @@ def create_or_update_draft_record(data: dict, invenio_id: str = None) -> dict:
     invenio_url = f"{INVENIO_API}/api/records"
 
     if invenio_id is not None:
-        # Creating a record
+        # Updating a record
         invenio_url += f"/{invenio_id}/draft"
 
         r = rate_limited_req('post', invenio_url, headers=h, verify=False)
@@ -116,9 +115,9 @@ def create_or_update_draft_record(data: dict, invenio_id: str = None) -> dict:
 
         record = r.json()
 
-        community = get_community(record['metadata']['publisher'])
+        # community = get_community(record['metadata']['publisher'])
         # Adding a draft record to a community publishes the record
-        add_record_to_community(record['id'], community['id'])
+        add_record_to_community(record['id'], 'e7239a83-497c-41de-99b9-e1cea03f1958')
 
     return r.json()
 
@@ -169,7 +168,7 @@ class Invenio(Target):
             server_record = get_record(identifier)
 
             if server_record is None:
-                self.log('Creating a new Invenio record')
+                self.log(f'Creating a new Invenio record ({identifier})')
                 create_or_update_draft_record(record)
             else:
                 invenio_id = server_record['id']
