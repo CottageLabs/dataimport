@@ -81,8 +81,7 @@ def get_invenio_record(json_obj: dict) -> dict:
     metadata = invenio_record['metadata']
 
     # Set creators
-    # TODO safe to assume author is publisher?
-    metadata['creators'] = [_get_new_creator(json_obj['publisher'])]
+    metadata['creators'] = json_obj['creators']
 
     # Set name, description and publication date
     metadata['title'] = json_obj['name']
@@ -96,7 +95,11 @@ def get_invenio_record(json_obj: dict) -> dict:
     if 'languages' in json_obj:
         metadata['languages'] = json_obj['languages']
 
-    metadata['publisher'] = json_obj.get('publisher').get('name')
+    if 'subjects' in json_obj:
+        metadata['subjects'] = json_obj['subjects']
+
+    if 'publisher' in json_obj:
+        metadata['publisher'] = json_obj.get('publisher')
 
     if 'published' in json_obj:
         metadata['publication_date'] = json_obj.get('published')

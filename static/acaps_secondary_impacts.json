@@ -1,0 +1,77 @@
+{
+  "name": "Secondary Impacts of COVID-19",
+  "publisher": "Assessment Capacities Project (ACAPS)",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Assessment Capacities Project (ACAPS)",
+        "identifiers": [
+          {
+            "identifier": "https://www.acaps.org",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    },
+    {
+      "person_or_org": {
+        "name": "University of Copenhagen",
+        "identifiers": [
+          {
+            "identifier": "https://www.ku.dk/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    },
+    {
+      "person_or_org": {
+        "name": "Lund University",
+        "identifiers": [
+          {
+            "identifier": "https://www.lu.se/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "acaps_secondary_impacts",
+  "source": "static",
+  "url": "https://www.acaps.org/en/thematics/all-topics/covid-19",
+  "description": "The dataset will track secondary impacts across a wide range of relevant themes such as economy, health, migration and education.",
+  "published": "2020-04-20",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-nc-nd-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "economy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "migration"
+    },
+    {
+      "subject": "education"
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://www.acaps.org/fileadmin/Dataset/Data_Link/acaps_covid19_secondary_impacts_beta.xlsx",
+      "title": "Secondary Impacts of COVID-19 dataset"
+    }
+  ]
+}

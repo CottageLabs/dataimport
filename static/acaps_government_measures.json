@@ -1,0 +1,68 @@
+{
+  "name": "COVID-19 Government Measures Dataset",
+  "publisher": "Assessment Capacities Project (ACAPS)",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Assessment Capacities Project (ACAPS)",
+        "identifiers": [
+          {
+            "identifier": "https://www.acaps.org",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    },
+    {
+      "person_or_org": {
+        "name": "University of Copenhagen",
+        "identifiers": [
+          {
+            "identifier": "https://www.ku.dk/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    },
+    {
+      "person_or_org": {
+        "name": "Lund University",
+        "identifiers": [
+          {
+            "identifier": "https://www.lu.se/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "acaps_government_measures",
+  "source": "static",
+  "url": "https://www.acaps.org/en/thematics/all-topics/covid-19",
+  "description": "The COVID-19 Government Measures Dataset puts together all the measures implemented by governments worldwide in response to the Coronavirus pandemic. Data collection includes secondary data review. The researched information available falls into five categories: Social distancing, movement restrictions, public health measures, social and economic measures and lockdowns. Each category is broken down into several types of measures.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-nc-nd-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://www.acaps.org/fileadmin/Dataset/Data_Link/acaps_covid19_secondary_impacts_beta.xlsx",
+      "title": "Secondary Impacts of COVID-19 dataset"
+    }
+  ]
+}

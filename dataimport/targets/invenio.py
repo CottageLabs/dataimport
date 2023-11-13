@@ -5,7 +5,7 @@ from slugify import slugify
 from urllib3.exceptions import InsecureRequestWarning
 
 from dataimport.lib.http_util import rate_limited_req
-from dataimport.settings import INVENIO_TOKEN, INVENIO_API
+from dataimport.settings import INVENIO_TOKEN, INVENIO_API, INVENIO_COMMUNITY
 from dataimport.target import Target
 
 h = {
@@ -74,14 +74,14 @@ def get_record(identifier: str) -> dict | None:
     r = rate_limited_req('get', headers=h, verify=False,
                          url=f"{INVENIO_API}/api/records?q=metadata.identifiers.identifier:%22{identifier}%22")
     resp = r.json()
+    results = len(resp['hits']['hits'])
 
-    if len(resp['hits']['hits']) == 1:
+    if results > 0:
+        if results > 1:
+            #  There shouldn't be more than one record with a URL identifier
+            print(f'{results} results when searching for identifier {identifier}')
+
         return resp['hits']['hits'][0]
-    else:
-        #  There shouldn't be more than one record with a URL identifier
-        pass
-
-    return None
 
 
 def create_or_update_draft_record(data: dict, invenio_id: str = None) -> dict:
@@ -117,7 +117,7 @@ def create_or_update_draft_record(data: dict, invenio_id: str = None) -> dict:
 
         # community = get_community(record['metadata']['publisher'])
         # Adding a draft record to a community publishes the record
-        add_record_to_community(record['id'], 'e7239a83-497c-41de-99b9-e1cea03f1958')
+        add_record_to_community(record['id'], INVENIO_COMMUNITY)
 
     return r.json()
 

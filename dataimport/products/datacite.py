@@ -13,19 +13,14 @@ datacite_intermediary_schema = {
         "name": {"type": "string"},  # human-readable name of dataset
         "description": {"type": "string"},  # human-readable description of dataset,
         "published": {"type": "string"},  # date dataset was published
+        "creators": {"type": "array"},
         "license": {"type": "string"},  # license dataset was published under
         "locations": {"type": "object"},
         "languages": {"type": "array"},
-        "publisher": {
-            "type": "object",  # information about the publisher
-            "properties": {
-                "name": {"type": "string"},  # publisher name
-                "id": {"type": "string"},  # either an URL or ROR id
-                "type": {"type": "string"},  # whether id is a URL or ROR
-            },
-            "required": ["name", "id", "type"],
-            "additionalProperties": False
-        },
+        "subjects": {"type": "array"},
+        "formats": {"type": "array"},
+        "rights": {"type": "array"},
+        "publisher": {"type": "string"},
         "datasets": {
             "type": "array",
             "items": {
@@ -40,7 +35,7 @@ datacite_intermediary_schema = {
         },
         "url": {"type": "string"}
     },
-    "required": ["id", "source", "name", "description", "datasets"],
+    "required": ["id", "source", "name", "creators", "description", "datasets"],
     "additionalProperties": False
 }
 

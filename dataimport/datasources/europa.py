@@ -23,19 +23,37 @@ def get_datasets(distributions: List) -> List:
              'title': get_if_english(d['title']) if 'title' in d else 'Untitled dataset'} for d in distributions]
 
 
-def get_publisher(result: dict) -> dict:
-    publisher = {'type': 'url'}
+def get_creator(result: dict) -> dict:
+    print(json.dumps(result))
+    if result['publisher'] and 'name' in result['publisher'] and 'resource' in result['publisher']:
+        return {
+            "person_or_org": {
+                "name": result['publisher']['name'],
+                "identifiers": [{
+                    "identifier": result['publisher']['resource'],
+                    "scheme": "url"
+                }],
+                "type": "organizational"
+            }
+        }
+    '''else:
+        return {
+            "person_or_org": {
+                "name": result['catalog']['publisher']['name'],
+                "identifiers": [{
+                    "identifier": "https://acleddata.com",
+                    "scheme": "url"
+                }],
+                "type": "organizational"
+            }
+        }'''
 
-    # There needs to be more granular publisher data and a publisher URL needs
-    # to be listed
-    if result['publisher'] is None or 'resource' not in result['publisher']:
-        publisher['name'] = result['catalog']['publisher']['name']
-        publisher['id'] = result['catalog']['publisher']['homepage']
-    else:
-        publisher['name'] = result['publisher']['name'] if 'name' in result['publisher'] else 'Untitled publisher'
-        publisher['id'] = result['publisher']['resource']
 
-    return publisher
+def get_publisher(result: dict) -> str:
+    if 'name' in result['publisher']:
+        return result['publisher']['name']
+    elif 'name' in result['catalog']['publisher']:
+        return result['catalog']['publisher']['name']
 
 
 class EUROPA(Datasource):
@@ -92,8 +110,13 @@ class EUROPA(Datasource):
                         self.log(get_if_english(result['title']) + ' contains no datasets.')
                         continue
 
+                    if not get_creator(result):
+                        self.log(get_if_english(result['title']) + ' has no author.')
+                        continue
+
                     europa_data = {'name': get_if_english(result['title']),
                                    'publisher': get_publisher(result),
+                                   'creators': [get_creator(result)],
                                    'id': result['id'],
                                    'source': self.id,
                                    'url': result['resource'],

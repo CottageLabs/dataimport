@@ -93,10 +93,20 @@ class ONS(Datasource):
                     # print(contact.text.strip().split('\n')[0].replace(' and', ',').replace('&', ',').replace(',,', ','))
                     script['id'] = dataset
                     script['source'] = self.id
-                    script['publisher'] = {
-                            'name': 'Office for National Statistics',
-                            'type': 'url',
-                            'id': 'https://www.ons.gov.uk/'}
+                    script['publisher'] = 'Office for National Statistics'
+                    script['creators'] = [{
+                        "person_or_org": {
+                            "name": 'Office for National Statistics',
+                            "identifiers": [
+                                {
+                                    "identifier": "https://www.ons.gov.uk/",
+                                    "scheme": "url"
+                                }
+                            ],
+                            "type": "organizational"
+                        }
+                    }]
+
                     script['locations'] = {
                         "place": "United Kingdom",
                         "identifiers": [
