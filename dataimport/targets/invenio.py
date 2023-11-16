@@ -77,11 +77,15 @@ def get_record(identifier: str) -> dict | None:
     results = len(resp['hits']['hits'])
 
     if results > 0:
-        if results > 1:
-            #  There shouldn't be more than one record with a URL identifier
-            print(f'{results} results when searching for identifier {identifier}')
+        # print(resp['hits']['hits'][0]['metadata']['identifiers'])
+        # print(identifier)
+        # if results > 1:
+        #    #  There shouldn't be more than one record with a URL identifier
+        #    print(f'{results} results when searching for identifier {identifier}')
 
-        return resp['hits']['hits'][0]
+        # Check if we're happy with the result
+        if resp['hits']['hits'][0]['metadata']['identifiers'][0]['identifier'] == identifier:
+            return resp['hits']['hits'][0]
 
 
 def create_or_update_draft_record(data: dict, invenio_id: str = None) -> dict:
