@@ -70,7 +70,8 @@ def get_invenio_record(json_obj: dict) -> dict:
         "access": {
             "record": "public",
             "files": "restricted"
-        }, "files": {
+        },
+        "files": {
             "enabled": False
         },
         "metadata": {
@@ -100,6 +101,12 @@ def get_invenio_record(json_obj: dict) -> dict:
 
     if 'publisher' in json_obj:
         metadata['publisher'] = json_obj.get('publisher')
+
+    if 'rights' in json_obj:
+        metadata['rights'] = json_obj.get('rights')
+
+    if 'dates' in json_obj:
+        metadata['dates'] = json_obj.get('dates')
 
     if 'published' in json_obj:
         metadata['publication_date'] = json_obj.get('published')

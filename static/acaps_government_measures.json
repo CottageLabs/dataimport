@@ -59,10 +59,22 @@
       "subject": "policy"
     }
   ],
+  "dates": [
+    {
+      "date": "2020-12-10",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
   "datasets": [
     {
-      "url": "https://www.acaps.org/fileadmin/Dataset/Data_Link/acaps_covid19_secondary_impacts_beta.xlsx",
-      "title": "Secondary Impacts of COVID-19 dataset"
+      "url": "https://www.acaps.org/fileadmin/Dataset/Data_Link/acaps_covid19_government_measures_dataset_0.xlsx",
+      "title": "COVID-19 Government Measures Dataset"
+    },
+    {
+      "url": "https://www.acaps.org/fileadmin/Dataset/Data_Link/acaps_covid19_humanitarian_exemptions_dataset.xlsx",
+      "title": "COVID-19 Humanitarian Exemptions to Government Measures"
     }
   ]
 }

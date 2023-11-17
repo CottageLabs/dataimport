@@ -68,6 +68,14 @@
       "subject": "education"
     }
   ],
+  "dates": [
+    {
+      "date": "2020-12-01",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
   "datasets": [
     {
       "url": "https://www.acaps.org/fileadmin/Dataset/Data_Link/acaps_covid19_secondary_impacts_beta.xlsx",
