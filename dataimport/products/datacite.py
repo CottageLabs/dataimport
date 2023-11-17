@@ -20,6 +20,7 @@ datacite_intermediary_schema = {
         "subjects": {"type": "array"},
         "formats": {"type": "array"},
         "rights": {"type": "array"},
+        "dates": {"type": "array"},
         "publisher": {"type": "string"},
         "datasets": {
             "type": "array",
@@ -33,7 +34,9 @@ datacite_intermediary_schema = {
                 "additionalProperties": False
             }
         },
-        "url": {"type": "string"}
+        "url": {"type": "string"},
+        "url_doc": {"type": "string"},
+        "url_api": {"type": "string"}
     },
     "required": ["id", "source", "name", "creators", "description", "datasets"],
     "additionalProperties": False

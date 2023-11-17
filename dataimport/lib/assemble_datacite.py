@@ -15,6 +15,7 @@ def _get_new_creator(publisher: dict) -> dict:
         }
     }
 
+
 '''
 def _get_identifiers(full_record: dict) -> List[dict]:
     ids = [
@@ -118,6 +119,10 @@ def get_invenio_record(json_obj: dict) -> dict:
             "scheme": "url"
         }
     ]
+
+    for url_type in ['url_doc', 'url_api']:
+        if url_type in json_obj:
+            metadata['identifiers'].append({"identifier": json_obj[url_type], "scheme": url_type})
 
     invenio_record['custom_fields'] = {'datasets': get_alt_ids(json_obj)}
 

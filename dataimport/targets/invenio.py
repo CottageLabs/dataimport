@@ -72,20 +72,19 @@ def get_community(title: str) -> dict:
 
 def get_record(identifier: str) -> dict | None:
     r = rate_limited_req('get', headers=h, verify=False,
-                         url=f"{INVENIO_API}/api/records?q=metadata.identifiers.identifier:%22{identifier}%22")
+                         url=f"{INVENIO_API}api/records?q=metadata.identifiers.identifier:%22{identifier}%22")
     resp = r.json()
-    results = len(resp['hits']['hits'])
+    # we can not trust these results
+    results = [r for r in resp['hits']['hits'] if r['metadata']['identifiers'][0]['identifier'] == identifier]
 
-    if results > 0:
+    if len(results) > 0:
         # print(resp['hits']['hits'][0]['metadata']['identifiers'])
         # print(identifier)
-        # if results > 1:
-        #    #  There shouldn't be more than one record with a URL identifier
-        #    print(f'{results} results when searching for identifier {identifier}')
+        if len(results) > 1:
+            #  There shouldn't be more than one record with a URL identifier
+            print(f'{len(results)} results when searching for identifier {identifier}')
 
-        # Check if we're happy with the result
-        if resp['hits']['hits'][0]['metadata']['identifiers'][0]['identifier'] == identifier:
-            return resp['hits']['hits'][0]
+        return results[0]
 
 
 def create_or_update_draft_record(data: dict, invenio_id: str = None) -> dict:
