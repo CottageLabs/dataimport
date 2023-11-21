@@ -1,0 +1,80 @@
+{
+  "name": "Country policy responses",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "International Labour Organization (ILO)",
+        "identifiers": [
+          {
+            "identifier": "https://ilo.org/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "lio-policy-responses",
+  "source": "static",
+  "url": "https://ilo.org/global/topics/coronavirus/regional-country/country-responses/lang--en/index.htm",
+  "description": "For two years, countries have taken unprecedented measures to combat the spread of the disease, and mitigate its effect on the economy and labour market.\n\nFind out the policies implemented between 2020 and 2022 by governments, employers’ and workers’ organizations, and the ILO in 188 countries and territories aggregated by regions.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "government"
+    },
+    {
+      "subject": "epidemiology"
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://www.ilo.org/legacy/english/covid-19/country-policy-responses/covid-country-response-Asia-2023-03-01.pdf",
+      "title": "Asia (PDF)"
+    },
+    {
+      "url": "https://www.ilo.org/legacy/english/covid-19/country-policy-responses/covid-country-response-Africa-2023-03-01.csv",
+      "title": "Asia (CSV)"
+    },
+    {
+      "url": "https://www.ilo.org/legacy/english/covid-19/country-policy-responses/covid-country-response-America-2023-03-01.pdf",
+      "title": "Americas (PDF)"
+    },
+    {
+      "url": "https://www.ilo.org/legacy/english/covid-19/country-policy-responses/covid-country-response-America-2023-03-01.csv",
+      "title": "Americas (CSV)"
+    },
+    {
+      "url": "https://www.ilo.org/legacy/english/covid-19/country-policy-responses/covid-country-response-Asia-2023-03-01.pdf",
+      "title": "Asia and the Pacific (PDF)"
+    },
+    {
+      "url": "https://www.ilo.org/legacy/english/covid-19/country-policy-responses/covid-country-response-Asia-2023-03-01.csv",
+      "title": "Asia and the Pacific (CSV)"
+    },
+    {
+      "url": "https://www.ilo.org/legacy/english/covid-19/country-policy-responses/covid-country-response-EuropeCentralAsia-2023-03-01.pdf",
+      "title": "Europe and Central Asia (PDF)"
+    },
+    {
+      "url": "https://www.ilo.org/legacy/english/covid-19/country-policy-responses/covid-country-response-EuropeCentralAsia-2023-03-01.csv",
+      "title": "Europe and Central Asia (CSV)"
+    },
+    {
+      "url": "https://www.ilo.org/legacy/english/covid-19/country-policy-responses/covid-EU-response-2023-03-01.pdf",
+      "title": "E.U. (PDF)"
+    },
+    {
+      "url": "https://www.ilo.org/legacy/english/covid-19/country-policy-responses/covid-EU-response-2023-03-01.csv",
+      "title": "E.U. (CSV)"
+    }
+  ]
+}

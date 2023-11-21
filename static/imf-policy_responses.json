@@ -1,0 +1,47 @@
+{
+  "name": "Policy Responses to COVID-19",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "International Monetary Fund (IMF)",
+        "identifiers": [
+          {
+            "identifier": "https://www.imf.org",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "imf-policy-responses",
+  "source": "static",
+  "url": "https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19",
+  "description": "This policy tracker summarizes the key economic responses governments are taking to limit the human and economic impact of the COVID-19 pandemic. The tracker includes 196 economies.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "government"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "society"
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19",
+      "title": "Textual country reports (HTML)"
+    }
+  ]
+}
