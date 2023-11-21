@@ -1,0 +1,96 @@
+{
+  "name": "The COVID-19 Sex-Disaggregated Data Tracker",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Global Health 50/50",
+        "identifiers": [
+          {
+            "identifier": "https://globalhealth5050.org/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    },
+    {
+      "person_or_org": {
+        "name": "The African Population and Health Research Center",
+        "identifiers": [
+          {
+            "identifier": "https://aphrc.org/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    },
+    {
+      "person_or_org": {
+        "name": "International Center for Research on Women",
+        "identifiers": [
+          {
+            "identifier": "https://www.icrw.org/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "global5050-sex-disaggregated",
+  "source": "static",
+  "url": "https://globalhealth5050.org/the-sex-gender-and-covid-19-project/",
+  "url_doc": "https://globalhealth5050.org/wp-content/uploads/Data-tracker-protocol.pdf",
+  "url_api": "https://api.globalhealth5050.org/docs/",
+  "description": "The COVID-19 Sex-Disaggregated Data Tracker assesses the availability of sex-disaggregated data from over 200 countries (and counting). Data was previously updated every two weeks, but from April 2021 was collected and reported monthly. Due to a decline in country reporting of COVID-19 data, we have paused manual data collection. The final round of manual data collection was conducted in June 2022. The dashboard will continue to be updated monthly with sex-disaggregated data on COVID-19 cases and deaths from the WHO COVID-19 Detailed Surveillance Data Dashboard. At present no other variables will be updated with new data.",
+  "published": "2022",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-nc-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "gender"
+    },
+    {
+      "subject": "sex"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2022-09-15",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://globalhealth5050.org/?_covid-data=dataset-historic&_extype=csv",
+      "title": "Full dataset (CSV)"
+    },
+    {
+      "url": "https://globalhealth5050.org/?_covid-data=dataset-historic&_extype=excel",
+      "title": "Full dataset (Excel)"
+    }
+  ]
+}

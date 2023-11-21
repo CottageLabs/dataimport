@@ -1,0 +1,67 @@
+{
+  "name": "Complexity Science Hub COVID-19 Control Strategies List",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Complexity Science Hub Vienna",
+        "identifiers": [
+          {
+            "identifier": "https://www.csh.ac.at/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "ssh_control-strategies",
+  "source": "static",
+  "url": "http://covid19-interventions.com/",
+  "url_doc": "https://github.com/amel-github/covid19-interventionmeasures",
+  "description": "During the COVID-19 pandemic, interventions were decided under rapidly changing, conjectural conditions, with limited (if any) prior experience. Worldwide, governments have implemented country-specific control strategies to prevent the introduction and mitigate the spread of the virus. However, were those measures effective?\n\nResearchers at the Complexity Science Hub Vienna are building a comprehensive database of non-pharmaceutical interventions (NPIs) taken by the governments worldwide in order to assess the impact of these actions on the spread of the COVID-19 in the respective countries.",
+  "published": "2021-03-02",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-sa-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "mobility"
+    },
+    {
+      "subject": "government"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2021-03-07",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://raw.githubusercontent.com/amel-github/covid19-interventionmeasures/master/COVID19_non-pharmaceutical-interventions_version2_utf8.csv",
+      "title": "Full dataset as a CSV"
+    }
+  ]
+}

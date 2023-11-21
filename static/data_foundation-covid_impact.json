@@ -1,0 +1,75 @@
+{
+  "name": "The COVID Impact Survey",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Data Foundation",
+        "identifiers": [
+          {
+            "identifier": "https://www.datafoundation.org/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "data_foundation-covid-impact",
+  "source": "static",
+  "url": "https://www.covid-impact.org",
+  "description": "The COVID Impact Survey provides national and regional statistics about physical health, mental health, economic security, and social dynamics in the United States.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-sa-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "mobility"
+    },
+    {
+      "subject": "government"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2020",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "locations": {
+    "place": "United States",
+    "identifiers": [
+      {
+        "scheme": "geonames",
+        "identifier": "6252001"
+      }
+    ]
+  },
+  "datasets": [
+    {
+      "url": "https://www.covid-impact.org/results",
+      "title": "Dataset landing page"
+    }
+  ]
+}

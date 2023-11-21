@@ -1,0 +1,68 @@
+{
+  "name": "Google COVID-19 Community Mobility Reports",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Google",
+        "identifiers": [
+          {
+            "identifier": "https://google.com/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "google-mobility",
+  "source": "static",
+  "url": "https://www.google.com/covid19/mobility/",
+  "url_doc": "https://www.google.com/covid19/mobility/data_documentation.html?hl=en",
+  "description": "Google mobility reports use aggregated, anonymized data to chart movement trends over time by geography, across different high-level categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.",
+  "published": "2020-03-18",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-nc-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "mobility"
+    },
+    {
+      "subject": "transport"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2022-10-15",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv",
+      "title": "Global (CSV)"
+    },
+    {
+      "url": "https://www.gstatic.com/covid19/mobility/Region_Mobility_Report_CSVs.zip",
+      "title": "Regions (CSVs)"
+    }
+  ]
+}
