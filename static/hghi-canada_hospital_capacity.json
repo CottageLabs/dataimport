@@ -1,0 +1,63 @@
+{
+  "name": "Canada Hospital Capacity",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Harvard Global Health Institute (HGHI)",
+        "identifiers": [
+          {
+            "identifier": "https://globalhealth.harvard.edu/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "hghi_hospital-capacity",
+  "source": "static",
+  "url": "https://globalepidemics.org/hospital-capacity/",
+  "url_doc": "https://globalepidemics.org/our-data-guide/",
+  "description": "A dataset of hospital bed capacity for Canadian hospitals.",
+  "published": "2020-04-10",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "hospital"
+    },
+    {
+      "subject": "government"
+    }
+  ],
+  "locations": {
+    "place": "Canada",
+    "identifiers": [
+      {
+        "scheme": "geonames",
+        "identifier": "6251999"
+      }
+    ]
+  },
+  "datasets": [
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1a5M1Zc92uB-lt2Wbbd6982-NOEolz73zeTrhl0c9f5Q/export?gid=0&format=xlsx",
+      "title": "Full dataset (Excel)"
+    }
+  ]
+}

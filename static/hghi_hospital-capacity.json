@@ -1,0 +1,71 @@
+{
+  "name": "US Hospital Capacity",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Harvard Global Health Institute (HGHI)",
+        "identifiers": [
+          {
+            "identifier": "https://globalhealth.harvard.edu/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "hghi_hospital-capacity",
+  "source": "static",
+  "url": "https://globalepidemics.org/hospital-capacity/",
+  "url_doc": "https://globalepidemics.org/our-data-guide/",
+  "description": "A dataset of hospital bed capacity data for each of 306 U.S. hospital markets, including data for nine different models of COVID-19 infection scenarios. The data comes from a team of researchers at the Harvard Global Data Institute. They modeled various scenarios, in which 20%, 40% and 60% of the adult population would be infected with the novel coronavirus, many of whom would have no or few symptoms, and examined whether hospitals had the capacity to handle them if the cases came in over six months, 12 months and 18 months. Hospital bed figures were derived from recent surveys conducted by the American Hospital Association and data compiled by the American Hospital Directory. The data is divided into slightly more than 300 regions, also known as hospital referral regions.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "hospital"
+    },
+    {
+      "subject": "government"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2021-03-07",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "locations": {
+    "place": "United States",
+    "identifiers": [
+      {
+        "scheme": "geonames",
+        "identifier": "6252001"
+      }
+    ]
+  },
+  "datasets": [
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1xAyBFTrlxSsTKQS7IDyr_Ah4JLBYj6_HX6ijKdm4fAY/export?gid=0&format=xlsx",
+      "title": "Full dataset (Excel)"
+    }
+  ]
+}
