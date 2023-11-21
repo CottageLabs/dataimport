@@ -1,0 +1,73 @@
+{
+  "name": "COVID-19 Food Trade Policy Tracker",
+  "creators": [
+    {
+      "person_or_org": {
+        "given_name": "David",
+        "family_name": "Laborde",
+        "type": "personal"
+      }
+    },
+    {
+      "person_or_org": {
+        "given_name": "Abdullah",
+        "family_name": "Mamun",
+        "type": "personal"
+      }
+    },
+    {
+      "person_or_org": {
+        "given_name": "Marie",
+        "family_name": "Parent",
+        "type": "personal"
+      }
+    }
+  ],
+  "id": "ifpri-food-trade-policy",
+  "source": "static",
+  "url": "https://www.ifpri.org/project/covid-19-food-trade-policy-tracker",
+  "url_doc": "https://www.ifpri.org/publication/documentation-covid-19-food-trade-policy-tracker-tracking-government-responses-affecting",
+  "description": "In the current COVID-19 crisis, there has been a movement of some national governments to restrict food exports. This behavior can, in aggregate, have dire unintended consequences for vulnerable people in food-importing countries, increasing prices and exacerbating issues of food insecurity already inflamed by the COVID-19 pandemic.",
+  "published": "2020-03-18",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "food"
+    },
+    {
+      "subject": "trade"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2022-03-23",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://tinyurl.com/IFPRItptracker",
+      "title": "Dataset (CSV)"
+    }
+  ]
+}

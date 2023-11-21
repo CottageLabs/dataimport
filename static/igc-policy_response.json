@@ -1,0 +1,45 @@
+{
+  "name": "COVID-19 Policy Response Tracker",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "International Growth Center",
+        "identifiers": [
+          {
+            "identifier": "https://www.theigc.org/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "igc-policy-response-tracker",
+  "source": "static",
+  "url": "https://www.theigc.org/covid-19/tracker/",
+  "url_doc": "https://docs.google.com/spreadsheets/d/1s46Oz_NtkyrowAracg9FTPYRdkP8GHRzQqM7w6Qa_2k/edit?ts=5e836726#gid=184202189",
+  "description": "The IGC COVID-19 policy response dashboard provides an interactive means for exploring government policy interventions aimed at addressing the pandemic across the world. Users can explore the nature, size and types of policy interventions that have been implemented by governments in response to the COVID-19 pandemic.",
+  "published": "2020-03-20",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "government"
+    },
+    {
+      "subject": "epidemiology"
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1s46Oz_NtkyrowAracg9FTPYRdkP8GHRzQqM7w6Qa_2k/export?ts=5e836726#gid=0&format=xlsx",
+      "title": "Dataset (Excel)"
+    }
+  ]
+}
