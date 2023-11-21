@@ -1,0 +1,86 @@
+{
+  "name": "The COVID Racial Data Tracker",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "The COVID Tracking Project at The Atlantic",
+        "identifiers": [
+          {
+            "identifier": "https://covidtracking.com/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "covid-tracking_racial",
+  "source": "static",
+  "url": "https://covidtracking.com/race/dashboard",
+  "url_api": "https://covidtracking.com/api",
+  "description": "The COVID Racial Data Tracker advocates for, collects, publishes, and analyzes racial data on the pandemic across the United States. It’s a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "economy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "mobility"
+    },
+    {
+      "subject": "government"
+    },
+    {
+      "subject": "race"
+    },
+    {
+      "subject": "ehtnicity"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2021-03-07",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "locations": {
+    "place": "United States",
+    "identifiers": [
+      {
+        "scheme": "geonames",
+        "identifier": "6252001"
+      }
+    ]
+  },
+  "datasets": [
+    {
+      "url": "https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vR_xmYt4ACPDZCDJcY12kCiMiH0ODyx3E1ZvgOHB8ae1tRcjXbs_yWBOA4j4uoCEADVfC1PS2jYO68B/pubhtml#",
+      "title": "Full dataset as a spreadsheet"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vS8SzaERcKJOD_EzrtCDK1dX1zkoMochlA9iHoHg_RSw3V8bkpfk1mpw4pfL5RdtSOyx_oScsUtyXyk/pub?gid=43720681&single=true&output=csv",
+      "title": "Full dataset as a CSV"
+    }
+  ]
+}

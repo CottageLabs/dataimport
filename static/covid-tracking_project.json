@@ -1,0 +1,304 @@
+{
+  "name": "The COVID Tracking Project at The Atlantic",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "The COVID Tracking Project at The Atlantic",
+        "identifiers": [
+          {
+            "identifier": "https://covidtracking.com/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "covid-tracking_project",
+  "source": "static",
+  "url": "https://covidtracking.com/",
+  "url_api": "https://covidtracking.com/api",
+  "description": "The COVID Tracking Project is a volunteer organization launched from The Atlantic and dedicated to collecting and publishing the data required to understand the COVID-19 outbreak in the United States.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "economy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "mobility"
+    },
+    {
+      "subject": "government"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2021-03-07",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "locations": {
+    "place": "United States",
+    "identifiers": [
+      {
+        "scheme": "geonames",
+        "identifier": "6252001"
+      }
+    ]
+  },
+  "datasets": [
+    {
+      "url": "https://covidtracking.com/data/download/national-history.csv",
+      "title": "Summary data for the United States (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/all-states-history.csv",
+      "title": "Data for all states (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/alabama-history.csv",
+      "title": "Alabama (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/alaska-history.csv",
+      "title": "Alaska (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/american-samoa-history.csv",
+      "title": "American Samoa (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/arizona-history.csv",
+      "title": "Arizona (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/arkansas-history.csv",
+      "title": "Arkansas (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/california-history.csv",
+      "title": "California (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/colorado-history.csv",
+      "title": "Colorado (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/connecticut-history.csv",
+      "title": "Connecticut (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/delaware-history.csv",
+      "title": "Delaware (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/district-of-columbia-history.csv",
+      "title": "District of Columbia (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/florida-history.csv",
+      "title": "Florida (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/georgia-history.csv",
+      "title": "Georgia (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/guam-history.csv",
+      "title": "Guam (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/hawaii-history.csv",
+      "title": "Hawaii (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/idaho-history.csv",
+      "title": "Idaho (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/illinois-history.csv",
+      "title": "Illinois (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/indiana-history.csv",
+      "title": "Indiana (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/iowa-history.csv",
+      "title": "Iowa (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/kansas-history.csv",
+      "title": "Kansas (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/kentucky-history.csv",
+      "title": "Kentucky (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/louisiana-history.csv",
+      "title": "Louisiana (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/maine-history.csv",
+      "title": "Maine (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/maryland-history.csv",
+      "title": "Maryland (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/massachusetts-history.csv",
+      "title": "Massachusetts (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/michigan-history.csv",
+      "title": "Michigan (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/minnesota-history.csv",
+      "title": "Minnesota (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/mississippi-history.csv",
+      "title": "Mississippi (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/missouri-history.csv",
+      "title": "Missouri (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/montana-history.csv",
+      "title": "Montana (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/nebraska-history.csv",
+      "title": "Nebraska (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/nevada-history.csv",
+      "title": "Nevada (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/new-hampshire-history.csv",
+      "title": "New Hampshire (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/new-jersey-history.csv",
+      "title": "New Jersey (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/new-mexico-history.csv",
+      "title": "New Mexico (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/new-york-history.csv",
+      "title": "New York (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/north-carolina-history.csv",
+      "title": "North Carolina (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/north-dakota-history.csv",
+      "title": "North Dakota (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/northern-mariana-islands-history.csv",
+      "title": "Northern Mariana (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/ohio-history.csv",
+      "title": "Ohio (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/oklahoma-history.csv",
+      "title": "Oklahoma (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/oregon-history.csv",
+      "title": "Oregon (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/pennsylvania-history.csv",
+      "title": "Pennsylvania (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/puerto-rico-history.csv",
+      "title": "Puerto Rico (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/rhode-island-history.csv",
+      "title": "Rhode Island (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/south-carolina-history.csv",
+      "title": "South Carolina (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/south-dakota-history.csv",
+      "title": "South Dakota (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/tennessee-history.csv",
+      "title": "Tennessee (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/texas-history.csv",
+      "title": "Texas (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/us-virgin-islands-history.csv",
+      "title": "US Virgin Islands (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/utah-history.csv",
+      "title": "Utah (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/vermont-history.csv",
+      "title": "Vermont (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/virginia-history.csv",
+      "title": "Virginia (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/washington-history.csv",
+      "title": "Washington (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/west-virginia-history.csv",
+      "title": "West Virginia (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/wisconsin-history.csv",
+      "title": "Wisconsin (CSV)"
+    },
+    {
+      "url": "https://covidtracking.com/data/download/wyoming-history.csv",
+      "title": "Wyoming (CSV)"
+    }
+  ]
+}

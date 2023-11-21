@@ -1,0 +1,181 @@
+{
+  "name": "COVID-19 Open-Data",
+  "creators": [
+    {
+      "person_or_org": {
+        "given_name": "Oscar",
+        "family_name": "Wahltinez",
+        "type": "personal"
+      }
+    }
+  ],
+  "id": "open-data_demographics",
+  "source": "static",
+  "url": "https://github.com/GoogleCloudPlatform/covid-19-open-data",
+  "description": "This repository attempts to assemble the largest Covid-19 epidemiological database in addition to a powerful set of expansive covariates. It includes open, publicly sourced, licensed data relating to demographics, economy, epidemiology, geography, health, hospitalizations, mobility, government response, weather, and more. Moreover, the data merges daily time-series, +20,000 global sources, at a fine spatial resolution, using a consistent set of region keys. All regions are assigned a unique location key, which resolves discrepancies between ISO / NUTS / FIPS codes, etc.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "economy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "mobility"
+    },
+    {
+      "subject": "government"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2022-10-24",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/aggregated.csv.gz",
+      "title": "Aggregated (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/index.csv",
+      "title": "Index (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/index.json",
+      "title": "Index (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/demographics.csv",
+      "title": "Demographics (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/demographics.json",
+      "title": "Demographics (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/economy.csv",
+      "title": "Economy (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/economy.json",
+      "title": "Economy (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/epidemiology.csv",
+      "title": "Epidemiology (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/epidemiology.json",
+      "title": "Epidemiology (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/lawatlas-emergency-declarations.csv",
+      "title": "Emergency Declarations (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/geography.csv",
+      "title": "Geography (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/geography.json",
+      "title": "Geography (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/health.csv",
+      "title": "Health (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/health.json",
+      "title": "Health (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/hospitalizations.csv",
+      "title": "Hospitalizations (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/hospitalizations.json",
+      "title": "Hospitalizations (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/mobility.csv",
+      "title": "Mobility (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/mobility.json",
+      "title": "Mobility (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/google-search-trends.csv",
+      "title": "Search Trends (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/covid19-vaccination-access/facility-boundary-us-all.csv",
+      "title": "Vaccination Access (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/covid19-vaccination-search-insights/Global_vaccination_search_insights.csv",
+      "title": "Vaccination Search (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/vaccinations.csv",
+      "title": "Vaccinations (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/oxford-government-response.csv",
+      "title": "Government Response (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/oxford-government-response.json",
+      "title": "Government Response (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/weather.csv",
+      "title": "Weather (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/worldbank.csv",
+      "title": "WorldBank (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/worldbank.json",
+      "title": "WorldBank (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/by-age.csv",
+      "title": "By Age (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/by-age.json",
+      "title": "By Age (JSON)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/by-sex.csv",
+      "title": "By Sex (CSV)"
+    },
+    {
+      "url": "https://storage.googleapis.com/covid19-open-data/v3/by-sex.json",
+      "title": "By Sex (JSON)"
+    }
+  ]
+}
