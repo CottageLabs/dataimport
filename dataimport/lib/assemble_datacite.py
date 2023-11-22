@@ -92,7 +92,7 @@ def get_invenio_record(json_obj: dict) -> dict:
         metadata['description'] = json_obj['description']
 
     if 'locations' in json_obj:
-        metadata['locations'] = {'features': [json_obj['locations']]}
+        metadata['locations'] = {'features': json_obj['locations']}
 
     if 'languages' in json_obj:
         metadata['languages'] = json_obj['languages']

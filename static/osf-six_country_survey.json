@@ -1,0 +1,144 @@
+{
+  "name": "Six-country Survey on Covid-19",
+  "creators": [
+    {
+      "person_or_org": {
+        "given_name": "Michele",
+        "family_name": "Belot",
+        "type": "personal"
+      }
+    },
+    {
+      "person_or_org": {
+        "given_name": "Syngjoo",
+        "family_name": "Choi",
+        "type": "personal"
+      }
+    },
+    {
+      "person_or_org": {
+        "given_name": "Julian",
+        "family_name": "Jamison",
+        "type": "personal"
+      }
+    },
+    {
+      "person_or_org": {
+        "given_name": "Nicholas W.",
+        "family_name": "Papageorge",
+        "type": "personal"
+      }
+    },
+    {
+      "person_or_org": {
+        "given_name": "Egon",
+        "family_name": "Tripodi",
+        "type": "personal"
+      }
+    },
+    {
+      "person_or_org": {
+        "given_name": "Eline",
+        "family_name": "van den Broek-Altenburg",
+        "type": "personal"
+      }
+    }
+  ],
+  "id": "osf-six-country-survey",
+  "source": "static",
+  "url": "https://oecd.github.io/OECD-covid-action-map/ ",
+  "url_api": "https://api.osf.io",
+  "description": "Representative evidence from China, Japan, Korea, Italy, the UK and the US on exposure, behavioral response, economic impacts and beliefs relating to the Covid-19 pandemic.",
+  "published": "2020-04-28",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "incidence"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2020-05-05",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "locations": [
+    {
+      "place": "United States",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "6252001"
+        }
+      ]
+    },
+    {
+      "place": "China",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "1814991"
+        }
+      ]
+    },
+    {
+      "place": "Japan",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "1861060"
+        }
+      ]
+    },
+    {
+      "place": "South Korea",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "1835841"
+        }
+      ]
+    },
+    {
+      "place": "Italy",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "3175395"
+        }
+      ]
+    },
+    {
+      "place": "United Kingdom",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "2635167"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://osf.io/download/3sxru/",
+      "title": "Public dataset (CSV)"
+    }
+  ]
+}

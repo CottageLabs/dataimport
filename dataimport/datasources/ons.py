@@ -107,7 +107,7 @@ class ONS(Datasource):
                         }
                     }]
 
-                    script['locations'] = {
+                    script['locations'] = [{
                         "place": "United Kingdom",
                         "identifiers": [
                             {
@@ -115,7 +115,7 @@ class ONS(Datasource):
                                 "identifier": "2635167"
                             }
                         ]
-                    }
+                    }]
                     script["languages"] = [{"id": "eng"}]
                     del script['@context']
                     del script['@type']

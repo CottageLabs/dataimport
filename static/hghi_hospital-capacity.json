@@ -53,15 +53,16 @@
       }
     }
   ],
-  "locations": {
-    "place": "United States",
-    "identifiers": [
-      {
-        "scheme": "geonames",
-        "identifier": "6252001"
-      }
-    ]
-  },
+  "locations": [
+    {
+      "place": "United States",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "6252001"
+        }
+      ]
+    }],
   "datasets": [
     {
       "url": "https://docs.google.com/spreadsheets/d/1xAyBFTrlxSsTKQS7IDyr_Ah4JLBYj6_HX6ijKdm4fAY/export?gid=0&format=xlsx",

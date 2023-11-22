@@ -15,7 +15,7 @@ datacite_intermediary_schema = {
         "published": {"type": "string"},  # date dataset was published
         "creators": {"type": "array"},
         "license": {"type": "string"},  # license dataset was published under
-        "locations": {"type": "object"},
+        "locations": {"type": "array"},
         "languages": {"type": "array"},
         "subjects": {"type": "array"},
         "formats": {"type": "array"},

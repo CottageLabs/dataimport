@@ -1,0 +1,79 @@
+{
+  "name": "OECD Covid Action Map",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "OECD",
+        "identifiers": [
+          {
+            "identifier": "http://www.oecd.org",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "oecd-covid-action-map",
+  "source": "static",
+  "url": "https://oecd.github.io/OECD-covid-action-map/ ",
+  "description": "What are countries doing to contain the spread of the coronavirus? How are countries helping people, small businesses and the economy to weather the crisis and beyond? This Country Policy Tracker helps you to navigate the global response.",
+  "published": "2020-03",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "mortality"
+    },
+    {
+      "subject": "incidence"
+    },
+    {
+      "subject": "economy"
+    },
+    {
+      "subject": "government"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2021-05-15",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://oecd.github.io/OECD-covid-action-map/data/CoronavirusUpdate_AllCountries_Public.xlsx",
+      "title": "Fiscal and Monetary Policy (Excel)"
+    },
+    {
+      "url": "https://www.oecd.org/social/Covid-19-Employment-and-Social-Policy-Responses-by-Country.xlsx",
+      "title": "Employment and Social Policy (Excel)"
+    },
+    {
+      "url": "https://www.oecd.org/health/COVID19-OECD-Health-System-Response-Tracker.xlsx",
+      "title": "Health Policy (Excel)"
+    },
+    {
+      "url": "https://www.oecd.org/tax/covid-19-tax-policy-and-other-measures.xlsm",
+      "title": "Tax policy responses by country (Excel)"
+    }
+  ]
+}

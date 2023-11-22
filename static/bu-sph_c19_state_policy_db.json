@@ -47,15 +47,17 @@
       }
     }
   ],
-  "locations": {
-    "place": "United States",
-    "identifiers": [
-      {
-        "scheme": "geonames",
-        "identifier": "6252001"
-      }
-    ]
-  },
+  "locations": [
+    {
+      "place": "United States",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "6252001"
+        }
+      ]
+    }
+  ],
   "datasets": [
     {
       "url": "https://github.com/USCOVIDpolicy/COVID-19-US-State-Policy-Database/raw/master/COVID-19%20US%20state%20policy%20database%2011_3_2020.xlsx",

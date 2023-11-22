@@ -57,15 +57,16 @@
       }
     }
   ],
-  "locations": {
-    "place": "United States",
-    "identifiers": [
-      {
-        "scheme": "geonames",
-        "identifier": "6252001"
-      }
-    ]
-  },
+  "locations": [
+    {
+      "place": "United States",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "6252001"
+        }
+      ]
+    }],
   "datasets": [
     {
       "url": "https://www.covid-impact.org/results",

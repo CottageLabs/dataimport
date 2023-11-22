@@ -64,15 +64,16 @@
       }
     }
   ],
-  "locations": {
-    "place": "United States",
-    "identifiers": [
-      {
-        "scheme": "geonames",
-        "identifier": "6252001"
-      }
-    ]
-  },
+  "locations": [
+    {
+      "place": "United States",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "6252001"
+        }
+      ]
+    }],
   "datasets": [
     {
       "url": "https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vR_xmYt4ACPDZCDJcY12kCiMiH0ODyx3E1ZvgOHB8ae1tRcjXbs_yWBOA4j4uoCEADVfC1PS2jYO68B/pubhtml#",

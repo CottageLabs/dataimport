@@ -45,15 +45,16 @@
       "subject": "government"
     }
   ],
-  "locations": {
-    "place": "Canada",
-    "identifiers": [
-      {
-        "scheme": "geonames",
-        "identifier": "6251999"
-      }
-    ]
-  },
+  "locations": [
+    {
+      "place": "Canada",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "6251999"
+        }
+      ]
+    }],
   "datasets": [
     {
       "url": "https://docs.google.com/spreadsheets/d/1a5M1Zc92uB-lt2Wbbd6982-NOEolz73zeTrhl0c9f5Q/export?gid=0&format=xlsx",
