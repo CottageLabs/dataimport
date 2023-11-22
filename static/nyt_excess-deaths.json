@@ -1,0 +1,61 @@
+{
+  "name": "The New York Times COVID-19 excess deaths tracker",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "The New York Times",
+        "identifiers": [
+          {
+            "identifier": "https://www.nytimes.com/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "nyt-excess-deaths",
+  "source": "static",
+  "url": "https://github.com/nytimes/covid-19-data/tree/master/excess-deaths",
+  "description": "The New York Times is releasing data that documents the number of deaths from all causes that have occurred during the coronavirus pandemic for 32 countries. We are compiling this time series data from national and municipal health departments, vital statistics offices and other official sources in order to better understand the true toll of the pandemic and provide a record for researchers and the public. Official Covid-19 death tolls offer a limited view of the impact of the outbreak because they often exclude people who have not been tested and those who died at home. All-cause mortality is widely used by demographers and other researchers to understand the full impact of deadly events, including epidemics, wars and natural disasters. The totals in this data include deaths from Covid-19 as well as those from other causes, likely including people who could not be treated or did not seek treatment for other conditions.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "mortality"
+    },
+    {
+      "subject": "incidence"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2021-01-18",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://github.com/nytimes/covid-19-data/blob/master/excess-deaths/deaths.csv",
+      "title": "Dataset (CSV)"
+    }
+  ]
+}

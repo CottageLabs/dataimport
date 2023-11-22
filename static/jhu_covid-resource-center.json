@@ -1,0 +1,56 @@
+{
+  "name": "Coronavirus Resource Center (CRC)",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Johns Hopkins Center for Systems Science and Engineering (CSSE) at Johns Hopkins University)",
+        "identifiers": [
+          {
+            "identifier": "https://coronavirus.jhu.edu/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "jhu-resource-center",
+  "source": "static",
+  "url": "https://coronavirus.jhu.edu/map.html",
+  "url_doc": "https://systems.jhu.edu/research/public-health/ncov/",
+  "description": "The Johns Hopkins Coronavirus Resource Center (CRC) is a continuously updated source of COVID-19 data and expert guidance. We aggregate and analyze the best data available on COVID-19—including cases, as well as testing, contact tracing and vaccine efforts—to help the public, policymakers and healthcare professionals worldwide respond to the pandemic.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "policy"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2023-10-03",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://github.com/CSSEGISandData/COVID-19",
+      "title": "Github Landing page containing data"
+    }
+  ]
+}
