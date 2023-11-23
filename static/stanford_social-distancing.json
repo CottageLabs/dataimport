@@ -1,0 +1,67 @@
+{
+  "name": "Crowdsourced COVID-19 Intervention Data",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Stanford Engineering",
+        "identifiers": [
+          {
+            "identifier": "https://engineering.stanford.edu/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    },
+    {
+      "person_or_org": {
+        "name": "Biocomplexity Institute and Initiative - University of Virginia",
+        "identifiers": [
+          {
+            "identifier": "https://biocomplexity.virginia.edu/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "stanford-social-distancing",
+  "source": "static",
+  "url": "https://socialdistancing.stanford.edu",
+  "url_doc": "https://github.com/OxCGRT/covid-policy-dataset",
+  "description": "Dataset collecting information on policy measures on county level in the United States.",
+  "published": "2020-03",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "economy"
+    },
+    {
+      "subject": "policy"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2023-06",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://docs.google.com/spreadsheets/d/133Lry-k80-BfdPXhlS0VHsLEUQh5_UutqAt7czZd7ek/export#gid=0?format=xlsx",
+      "title": "Crowdsourced COVID-19 Intervention Data (Excel)"
+    }
+  ]
+}

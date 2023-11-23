@@ -1,0 +1,101 @@
+{
+  "name": "Coronavirus Government Response Tracker",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Blavatnik School of Government, Oxford University",
+        "identifiers": [
+          {
+            "identifier": "https://www.bsg.ox.ac.uk/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "oxford-government-response",
+  "source": "static",
+  "url": "https://www.bsg.ox.ac.uk/research/covid-19-government-response-tracker",
+  "url_doc": "https://github.com/OxCGRT/covid-policy-dataset",
+  "description": "The Oxford Covid-19 Government Response Tracker (OxCGRT) is a project that collected information on policy measures to tackle COVID-19 over the years 2020, 2021, and 2022.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "incidence"
+    },
+    {
+      "subject": "economy"
+    },
+    {
+      "subject": "migration"
+    },
+    {
+      "subject": "education"
+    },
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "society"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2023-06",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://raw.githubusercontent.com/OxCGRT/covid-policy-dataset/main/data/OxCGRT_compact_national_v1.csv",
+      "title": "Compact national (CSV)"
+    },
+    {
+      "url": "https://github.com/OxCGRT/covid-policy-dataset/raw/main/data/OxCGRT_compact_subnational_v1.csv",
+      "title": "Compact subnational (CSV)"
+    },
+    {
+      "url": "https://github.com/OxCGRT/covid-policy-dataset/raw/main/data/OxCGRT_fullwithnotes_national_2020_v1.csv",
+      "title": "Full with notes, national 2020 (CSV)"
+    },
+    {
+      "url": "https://github.com/OxCGRT/covid-policy-dataset/raw/main/data/OxCGRT_fullwithnotes_national_2021_v1.csv",
+      "title": "Full with notes, national 2021 (CSV)"
+    },
+    {
+      "url": "https://github.com/OxCGRT/covid-policy-dataset/raw/main/data/OxCGRT_fullwithnotes_national_2022_v1.csv",
+      "title": "Full with notes, national 2022 (CSV)"
+    },
+    {
+      "url": "https://github.com/OxCGRT/covid-policy-dataset/raw/main/data/OxCGRT_simplified_v1.csv",
+      "title": "Simplified (CSV)"
+    },
+    {
+      "url": "https://github.com/OxCGRT/covid-policy-dataset/raw/main/data/OxCGRT_vaccines_full_national_v1.csv",
+      "title": "Vaccines full national (CSV)"
+    },
+    {
+      "url": "https://github.com/OxCGRT/covid-policy-dataset/raw/main/data/OxCGRT_vaccines_full_subnational_v1.csv",
+      "title": "Vaccines full subnational (CSV)"
+    }
+  ]
+}
