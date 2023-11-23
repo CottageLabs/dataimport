@@ -1,0 +1,84 @@
+{
+  "name": "COVID-19 Impact Dataset: Great British Intelligence Test, 2020",
+  "creators": [
+    {
+      "person_or_org": {
+        "given_name": "Adam",
+        "family_name": "Hampshire",
+        "type": "personal",
+        "identifiers": [
+          {
+            "identifier": "0000-0002-5176-5420",
+            "scheme": "orcid"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "uk-impact-hampshire",
+  "source": "static",
+  "url": "https://reshare.ukdataservice.ac.uk/854451/",
+  "description": "There is an urgent need to understand the factors that mediate and mitigate the impact of the Covid-19 \npandemic on behaviour and wellbeing. However, the onset of the outbreak was unexpected and the rate of acceleration so rapid\nas to preclude the planning of studies that can address these critical issues. Coincidentally, in January 2020, just prior to \nthe outbreak in the UK, my team launched a study that collected detailed (~50 minute) cognitive and questionnaire assessments \nfrom >200,000 members of the UK public as part of a collaboration with the BBC. This placed us in a unique position to examine \nhow aspects of mental health subsequently changed as the pandemic arrived in the UK. Therefore, we collected data from a \nfurther ~120,000 people in May, including additional detailed measures of self-perceived pandemic impact and free text \ndescriptions of the main positives, negatives and pragmatic measures that people found helped them maintain their wellbeing. \nIn this data archive, we include the survey data from January and May 2020 examining impact of Covid-19 on mood, wellbeing and \nbehaviour in the UK population. This data is reported in a preprint article, where we apply a novel fusion of psychometric, \nmultivariate and machine learning analyses to this unique dataset, in order to address some of the most pressing questions \nregarding wellbeing during the pandemic in a data-driven manner.",
+  "published": "2021-03-15",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "society"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "demographics"
+    },
+    {
+      "subject": "mortality"
+    },
+    {
+      "subject": "mental health"
+    },
+    {
+      "subject": "education"
+    },
+    {
+      "subject": "psychology"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2021-03-15",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "locations": [
+    {
+      "place": "United States",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "6252001"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://reshare.ukdataservice.ac.uk/854451/1/Archive.zip",
+      "title": "Archive (ZIP)"
+    }
+  ]
+}

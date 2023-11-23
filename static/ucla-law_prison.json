@@ -1,0 +1,95 @@
+{
+  "name": "The UCLA Law COVID Behind Bars Data Project",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "UCLA Law",
+        "identifiers": [
+          {
+            "identifier": "https://law.ucla.edu/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "ucla-law_prison",
+  "source": "static",
+  "url": "https://uclacovidbehindbars.org/",
+  "url_doc": "https://github.com/uclalawcovid19behindbars/data",
+  "description": "We collect and analyze public information about the coronavirus pandemic in prisons, jails, youth facilities, and immigration detention centers across the United States. Our centralized source of data enables greater oversight of and accountability for carceral institutions’ responses to the pandemic behind bars. We also record legal and community responses to the crisis, including mass releases, legal filings, court orders, and organizing efforts.",
+  "published": "2020-03",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "prison"
+    },
+    {
+      "subject": "society"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "law"
+    },
+    {
+      "subject": "mortality"
+    },
+    {
+      "subject": "government"
+    },
+    {
+      "subject": "immigration"
+    },
+    {
+      "subject": "fundraising"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2023-01-18",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "locations": [
+    {
+      "place": "United States",
+      "identifiers": [
+        {
+          "scheme": "geonames",
+          "identifier": "6252001"
+        }
+      ]
+    }],
+  "datasets": [
+    {
+      "url": "https://github.com/uclalawcovid19behindbars/data/raw/master/historical-data/historical_facility_counts.csv",
+      "title": "Historical Facility Counts (CSV)"
+    },
+    {
+      "url": "https://github.com/uclalawcovid19behindbars/data/raw/master/historical-data/historical_national_counts.csv",
+      "title": "Historical National Counts (CSV)"
+    },
+    {
+      "url": "https://github.com/uclalawcovid19behindbars/data/raw/master/historical-data/historical_state_counts.csv",
+      "title": "Historical State Counts (CSV)"
+    },
+    {
+      "url": "https://github.com/uclalawcovid19behindbars/data/raw/master/historical-data/historical_state_jurisdiction_counts.csv",
+      "title": "Historical State Jurisdiction Counts (CSV)"
+    }
+  ]
+}
