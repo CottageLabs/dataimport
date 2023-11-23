@@ -1,0 +1,56 @@
+{
+  "name": "COVID-19 Impact on Education",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "UNESCO",
+        "identifiers": [
+          {
+            "identifier": "https://www.unesco.org/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "unesco-education-impact",
+  "source": "static",
+  "url": "https://www.unesco.org/en/covid-19/education-response",
+  "url_doc": "https://en.unesco.org/sites/default/files/en_methodological_note_-_unesco_map_on_covid-19_caused_school_closures_and_re-openings_rev_mp.pdf",
+  "description": "Throughout the pandemic, in close cooperation with ministers of education, UNESCO monitored the evolution of school closures around the world. Data presented in the interactive map show the evolution from February 2020 to June 2022.",
+  "published": "2020-02",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "education"
+    },
+    {
+      "subject": "schools"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "fundraising"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2022-06",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://en.unesco.org/sites/default/files/unesco_data_on_school_closures_from_february_2020_to_june_2022.csv_.zip",
+      "title": "Dataset (ZIP)"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "COVID-19 Financial Response Tracker",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "Yale School of Management",
+        "identifiers": [
+          {
+            "identifier": "https://som.yale.edu/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "yale-financial-response",
+  "source": "static",
+  "url": "https://som.yale.edu/node/222278",
+  "url_doc": "https://en.unesco.org/sites/default/files/en_methodological_note_-_unesco_map_on_covid-19_caused_school_closures_and_re-openings_rev_mp.pdf",
+  "description": "The COVID-19 Financial Response Tracker (CFRT) follows economic interventions by central banks, fiscal authorities, and international organizations aimed at combating the negative effects of the coronavirus pandemic and restoring financial stability. The tracker will also highlight significant proposals from government representatives and institutions. Each tracker entry will provide summary information and link to relevant press releases or articles about the intervention. The COVID-19 Financial Response Tracker Visualization (CFRTV) graphically depicts the CFRT’s entries according to country and type of intervention. The intent of the Tracker and Visualization platform is to inform citizens, policymakers, and government officials about state actions against COVID-19.",
+  "published": "2020-02-09",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "finance"
+    },
+    {
+      "subject": "government"
+    },
+    {
+      "subject": "policy"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2021-11-08",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://som.yale.edu/sites/default/files/2022-01/YPFS_CFRT_2_3_2021-11-12.xlsx",
+      "title": "Dataset (Excel)"
+    }
+  ]
+}
