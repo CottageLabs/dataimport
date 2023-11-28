@@ -38,7 +38,7 @@ datacite_intermediary_schema = {
         "url_doc": {"type": "string"},
         "url_api": {"type": "string"}
     },
-    "required": ["id", "source", "name", "creators", "description", "datasets"],
+    "required": ["id", "source", "url", "name", "creators", "description", "datasets"],
     "additionalProperties": False
 }
 
