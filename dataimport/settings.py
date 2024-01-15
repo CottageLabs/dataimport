@@ -3,6 +3,7 @@ import os
 
 DATABASES = rel2abs(__file__, "..", "databases")
 RESOURCES = rel2abs(__file__, "..", "resources")
+STATIC = rel2abs(__file__, "..", "static")
 TARGET_DIRS = os.path.join(DATABASES, "targets")
 
 DATASOURCES = {
@@ -10,6 +11,7 @@ DATASOURCES = {
     "zenodo": "dataimport.datasources.zenodo.Zenodo",
     "ons": "dataimport.datasources.ons.ONS",
     "acled": "dataimport.datasources.acled.ACLED",
+    "static": "dataimport.datasources.static.STATIC",
     "europa": "dataimport.datasources.europa.EUROPA"
 }
 
@@ -52,6 +54,7 @@ STORE_SCOPES = {
     "invenio": os.path.join(DATABASES, "targets", "invenio"),
     "datacite": os.path.join(DATABASES, "products", "datacite"),
     "acled": os.path.join(DATABASES, "datasources", "acled"),
+    "static": os.path.join(DATABASES, "datasources", "static"),
     "europa": os.path.join(DATABASES, "datasources", "europa"),
 }
 
@@ -64,6 +67,7 @@ STORE_KEEP_HISTORIC = {
     "datacite": 1,
     "acled": 1,
     "europa": 1,
+    "static": 1
 }
 
 
@@ -111,8 +115,9 @@ ZENODO_SEARCH = default_search + " -" + " -".join(excl_terms)
 ONS_URL = 'https://www.ons.gov.uk'
 ONS_SEARCH = '/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datalist?sortBy=release_date&filter=datasets&size=1000'
 
-INVENIO_API = "https://127.0.0.1:5000"
-INVENIO_TOKEN = "v85Zh7HSh4qboK4xKqI65ETLQflV2FqDBvAgVW6aOdL0c6YEO6EG6ErCKjrn"
+INVENIO_API = "https://127.0.0.1:5000/"
+INVENIO_TOKEN = "7kBuUAW9XMlsiCrMVAqaREHTUX4J8ZT7ZLibnFdTBGmuF1WlqKawBR3ENmIC"
+INVENIO_COMMUNITY = '8222517f-947f-47df-8714-5dd3896f2c7c'
 
 USER_AGENT = 'My User Agent 1.0'
 

@@ -5,8 +5,11 @@ setup(
     version='1.0.0',
     packages=find_packages(),
     install_requires=[
+        "beautifulsoup4==4.12.2",
         "click~=8.1.3",
         "esprit @ git+https://github.com/CottageLabs/esprit.git@edda12177effa0945d99302f0d453b22503e335b#egg=esprit",
+        "jsonschema==4.20.0",
+        "python-slugify==8.0.1",
         "requests==2.22.0",
         "Unidecode==1.1.1",
         "Deprecated==1.2.13",
