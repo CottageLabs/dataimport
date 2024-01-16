@@ -13,7 +13,8 @@ DATASOURCES = {
     "acled": "dataimport.datasources.acled.ACLED",
     "static": "dataimport.datasources.static.STATIC",
     "europa": "dataimport.datasources.europa.EUROPA",
-    "cdc": "dataimport.datasources.cdc.CDC"
+    "cdc": "dataimport.datasources.cdc.CDC",
+    "coronanet": "dataimport.datasources.coronanet.CORONANET"
 }
 
 PRODUCTS = {
@@ -29,7 +30,7 @@ TARGETS = {
 PRODUCT_SOURCES = {
     "jac": ["doaj"],
     "eui": ["ons"],
-    "datacite": ["ons", "acled", "europa"]
+    "datacite": ["coronanet"]
 }
 
 PRODUCT_TARGETS = {
@@ -58,6 +59,7 @@ STORE_SCOPES = {
     "static": os.path.join(DATABASES, "datasources", "static"),
     "europa": os.path.join(DATABASES, "datasources", "europa"),
     "cdc": os.path.join(DATABASES, "datasources", "cdc"),
+    "coronanet": os.path.join(DATABASES, "datasources", "coronanet"),
 }
 
 STORE_KEEP_HISTORIC = {
@@ -70,7 +72,8 @@ STORE_KEEP_HISTORIC = {
     "acled": 1,
     "europa": 1,
     "static": 1,
-    "cdc": 1
+    "cdc": 1,
+    "coronanet": 1
 }
 
 
@@ -122,7 +125,8 @@ INVENIO_API = "https://127.0.0.1:5000/"
 INVENIO_TOKEN = "7kBuUAW9XMlsiCrMVAqaREHTUX4J8ZT7ZLibnFdTBGmuF1WlqKawBR3ENmIC"
 INVENIO_COMMUNITY = '8222517f-947f-47df-8714-5dd3896f2c7c'
 
-USER_AGENT = 'My User Agent 1.0'
+USER_AGENT = 'Covid Data Resource Aggregate Scraper v. 0.5'
+GITHUB_TOKEN = 'token'
 
 # ACLED
 
@@ -136,3 +140,6 @@ EUROPA_URL = 'https://data.europa.eu/api/hub/search/search?filter=dataset&facets
 
 # CDC
 CDC_URL = 'https://data.cdc.gov/browse?limitTo=datasets&tags=covid-19&limit=500'
+
+# Coronanet
+CORONANET_URL = 'https://www.coronanet-project.org/index.html'
