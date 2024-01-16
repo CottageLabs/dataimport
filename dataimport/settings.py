@@ -14,7 +14,8 @@ DATASOURCES = {
     "static": "dataimport.datasources.static.STATIC",
     "europa": "dataimport.datasources.europa.EUROPA",
     "cdc": "dataimport.datasources.cdc.CDC",
-    "coronanet": "dataimport.datasources.coronanet.CORONANET"
+    "coronanet": "dataimport.datasources.coronanet.CORONANET",
+    "ecdc": "dataimport.datasources.ecdc.ECDC",
 }
 
 PRODUCTS = {
@@ -30,7 +31,7 @@ TARGETS = {
 PRODUCT_SOURCES = {
     "jac": ["doaj"],
     "eui": ["ons"],
-    "datacite": ["coronanet"]
+    "datacite": ["ecdc"]
 }
 
 PRODUCT_TARGETS = {
@@ -60,6 +61,7 @@ STORE_SCOPES = {
     "europa": os.path.join(DATABASES, "datasources", "europa"),
     "cdc": os.path.join(DATABASES, "datasources", "cdc"),
     "coronanet": os.path.join(DATABASES, "datasources", "coronanet"),
+    "ecdc": os.path.join(DATABASES, "datasources", "ecdc"),
 }
 
 STORE_KEEP_HISTORIC = {
@@ -73,7 +75,8 @@ STORE_KEEP_HISTORIC = {
     "europa": 1,
     "static": 1,
     "cdc": 1,
-    "coronanet": 1
+    "coronanet": 1,
+    "ecdc": 1
 }
 
 
@@ -143,3 +146,7 @@ CDC_URL = 'https://data.cdc.gov/browse?limitTo=datasets&tags=covid-19&limit=500'
 
 # Coronanet
 CORONANET_URL = 'https://www.coronanet-project.org/index.html'
+
+
+# ECDC
+ECDC_URL = 'https://www.ecdc.europa.eu/en/covid-19/data' # 'https://www.ecdc.europa.eu/en/publications-data/data-covid-19-vaccination-eu-eea'

@@ -108,6 +108,11 @@ class CORONANET(Datasource):
                                          }
                                      }],
                                      # 'datasetDocumentation': "https://www.coronanet-project.org/assets/CoronaNet_Codebook_Panel.pdf",
+                                     "rights": [
+                                         {
+                                             "id": "cc-by-nc-2.0"
+                                         }
+                                     ],
                                      "datasets": [
                                          {
                                              # "@type": "DataDownload",
@@ -116,7 +121,6 @@ class CORONANET(Datasource):
                                              "size": '',
                                              "title": 'Dataset'
                                          }]}
-
                         validate(cnet_data, datacite_intermediary_schema)
                         o.write(json.dumps(cnet_data))
 
