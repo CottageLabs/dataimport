@@ -12,7 +12,8 @@ DATASOURCES = {
     "ons": "dataimport.datasources.ons.ONS",
     "acled": "dataimport.datasources.acled.ACLED",
     "static": "dataimport.datasources.static.STATIC",
-    "europa": "dataimport.datasources.europa.EUROPA"
+    "europa": "dataimport.datasources.europa.EUROPA",
+    "cdc": "dataimport.datasources.cdc.CDC"
 }
 
 PRODUCTS = {
@@ -56,6 +57,7 @@ STORE_SCOPES = {
     "acled": os.path.join(DATABASES, "datasources", "acled"),
     "static": os.path.join(DATABASES, "datasources", "static"),
     "europa": os.path.join(DATABASES, "datasources", "europa"),
+    "cdc": os.path.join(DATABASES, "datasources", "cdc"),
 }
 
 STORE_KEEP_HISTORIC = {
@@ -67,7 +69,8 @@ STORE_KEEP_HISTORIC = {
     "datacite": 1,
     "acled": 1,
     "europa": 1,
-    "static": 1
+    "static": 1,
+    "cdc": 1
 }
 
 
@@ -130,3 +133,6 @@ ACLED_URL = 'https://acleddata.com/analysis/covid-19-disorder-tracker/'
 # Going with the default limit of 10 because some records contains massive information
 # leading to mbs for json per result file
 EUROPA_URL = 'https://data.europa.eu/api/hub/search/search?filter=dataset&facets={%22keywords%22:[%22covid-19%22]}&limit=10'
+
+# CDC
+CDC_URL = 'https://data.cdc.gov/browse?limitTo=datasets&tags=covid-19&limit=500'
