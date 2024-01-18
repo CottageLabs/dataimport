@@ -1,0 +1,51 @@
+{
+  "name": "COVID-19 Health System Response Monitor (HSRM)",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "World Health Organisation",
+        "identifiers": [
+          {
+            "identifier": "https://www.who.org",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "who_hsm",
+  "source": "static",
+  "url": "https://eurohealthobservatory.who.int/monitors/hsrm/",
+  "description": "The Health System Response Monitor (HSRM) has been designed in response to the COVID-19 outbreak to collect and organize up-to-date information on how countries are responding to the crisis. It focuses primarily on the responses of health systems but also captures wider public health initiatives. This is a joint undertaking of the WHO Regional Office for Europe, the European Commission, and the European Observatory on Health Systems and Policies.",
+  "published": "2020",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "economy"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "policy"
+    },
+    {
+      "subject": "epidemiology"
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://eurohealthobservatory.who.int/monitors/hsrm/analyses",
+      "title": "Analyses"
+    },
+    {
+      "url": "https://eurohealthobservatory.who.int/monitors/hsrm/all-updates",
+      "title": "Responses"
+    }
+  ]
+}
