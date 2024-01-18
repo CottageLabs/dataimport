@@ -1,0 +1,59 @@
+{
+  "name": "Short-term Mortality Fluctuations (STMF)",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "The Human Mortality Database",
+        "identifiers": [
+          {
+            "identifier": "https://www.mortality.org",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "hmd_stmf",
+  "source": "static",
+  "url": "https://www.mortality.org/Data/STMF",
+  "url_doc": "https://www.mortality.org/File/GetDocument/Public/STMF/DOC/STMFNote.pdf",
+  "description": "In response to the COVID-19 pandemic, the HMD team decided to establish a new data resource: Short-term Mortality Fluctuations (STMF) data series. Objective and internationally comparable data are crucial to determine the effectiveness of different strategies used to address epidemics. Weekly death counts provide the most objective and comparable way of assessing the scale of short-term mortality elevations across countries and time.",
+  "published": "2020-06-06",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "mortality"
+    },
+    {
+      "subject": "health"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2024-01-15",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://www.mortality.org/File/GetDocument/Public/STMF/Outputs/stmf.xlsx",
+      "title": "All data (Excel)"
+    },
+    {
+      "url": "https://www.mortality.org/File/GetDocument/Public/STMF/Outputs/stmf.csv",
+      "title": "All data (CSV)"
+    }
+  ]
+}
