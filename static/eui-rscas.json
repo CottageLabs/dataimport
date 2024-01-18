@@ -1,0 +1,129 @@
+{
+  "name": "COVID-19 Trade Policy Database: Food and Medical Products",
+  "creators": [
+    {
+      "person_or_org": {
+        "given_name": "Bernard",
+        "family_name": "Hoekman",
+        "type": "personal"
+      }
+    },
+    {
+      "person_or_org": {
+        "given_name": "Anirudh",
+        "family_name": "Shingal",
+        "type": "personal"
+      }
+    },
+    {
+      "person_or_org": {
+        "given_name": "Varun",
+        "family_name": "Eknath",
+        "type": "personal"
+      }
+    },
+    {
+      "person_or_org": {
+        "given_name": "Viktoriya",
+        "family_name": "Ereshchenko",
+        "type": "personal"
+      }
+    }
+  ],
+  "id": "eui-rscas",
+  "source": "static",
+  "url": "https://globalgovernanceprogramme.eui.eu/covid-19-trade-policy-database-food-and-medical-products/",
+  "description": "The project collects information on trade policy changes affecting medical and food products since the beginning of 2020. Its aim is to document the cumulative resort to trade policies and changes across countries over time.",
+  "published": "2020-05-01",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-nc-nd-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "society"
+    },
+    {
+      "subject": "epidemiology"
+    },
+    {
+      "subject": "health"
+    },
+    {
+      "subject": "mortality"
+    },
+    {
+      "subject": "trade"
+    },
+    {
+      "subject": "food"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2023-02",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3D8ff0660cd0%26e%3Db88c9c292b&data=05%7C01%7CMartina.Popova%40eui.eu%7C9b387dc7c1d0411134a408db17f2c93e%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C638130103751531427%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=n%2BVSLQ3dNrPdlBo8Uzp%2FbEWuVjbtlm1wFDOv50UA7QY%3D&reserved=0",
+      "title": "February 2023 (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3Dff68bc9f62%26e%3Db88c9c292b&data=05%7C01%7CMartina.Popova%40eui.eu%7C2fb1b666ae9d4b58bd8908dabfe343d8%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C638033280129639670%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=i6EU9mWRkgKA3UlQ%2F7eGzICkNdihacyAv3ICjfYNwyQ%3D&reserved=0",
+      "title": "December 2022 (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3D115ae09ba2%26e%3Db88c9c292b&data=05%7C01%7CMartina.Popova%40eui.eu%7C4da51d51d8034cce3dcf08daac6b0a41%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C638011872991724707%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=qRL0bR%2B%2Bc1lukhQL%2Fey%2F1XtniIqU4dShePmIzuchFrU%3D&reserved=0",
+      "title": "October 2022 (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3D6599686c0d%26e%3Db88c9c292b&data=05%7C01%7CMartina.Popova%40eui.eu%7C1c72ef7a7f7f47cfcd6c08da6be9c8e2%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C637940949083127443%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=HF0130rYV7W4%2F4Ceg8xb6JELfVjFFcBnY%2BH%2FuQDzGSk%3D&reserved=0",
+      "title": "August 2022 (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3Dfb9d7828ed%26e%3Db88c9c292b&data=05%7C01%7CMaria.Hernandez%40eui.eu%7C606ba8a5d33f49058ad608da43d46076%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C637896876674587520%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=t3XcoKWU6ztuJkf48vLb59RrFBOxWEpnii0BreC2%2Fxw%3D&reserved=0",
+      "title": "April 2022 (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3D1763d39dbd%26e%3Db88c9c292b&data=05%7C01%7CMaria.Hernandez%40eui.eu%7Ca8452a956afe4795db8808da42f09dca%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C637895898452904834%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=nAI5egu7DQjCpRKxCXokqKiU%2Fyze%2Bs9udOBrtgmDJhM%3D&reserved=0",
+      "title": "May 2022 (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3D8ca4f95155%26e%3Db88c9c292b&data=05%7C01%7CMaria.Hernandez%40eui.eu%7Cbf010833177142516f3208da43d4ba8d%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C637896878178432239%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=enFwEkTR5MB3KiSeeSwD6vcShOfi8CjbvrN4riWv8Yk%3D&reserved=0",
+      "title": "22 October 2021 Monthly (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3De48a76eead%26e%3Db88c9c292b&data=05%7C01%7CMaria.Hernandez%40eui.eu%7Cdf102c466bb94cd0cc0608da43d4e1d2%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C637896878837365272%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=WLhlaEftn%2BJjUbNfsQnyxKVHx4Maxkp%2FNCDeH2pHvx0%3D&reserved=0",
+      "title": "23 July 2021 Monthly (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3D1bda1f3d44%26e%3Db88c9c292b&data=04%7C01%7CMartina.Popova%40eui.eu%7C7a32341d20af4cd01c5208d939440b95%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C637603786695201101%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=U4KIsVODnVJFu1rUsBENDlfY%2F%2BULx2Hz5Bw2M905lDo%3D&reserved=0",
+      "title": "18 June 2021 Monthly (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3De48a76eead%26e%3Db88c9c292b&data=05%7C01%7CMaria.Hernandez%40eui.eu%7Cdf102c466bb94cd0cc0608da43d4e1d2%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C637896878837365272%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=WLhlaEftn%2BJjUbNfsQnyxKVHx4Maxkp%2FNCDeH2pHvx0%3D&reserved=0",
+      "title": "23 July 2021 Monthly (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3Df1252b6593%26e%3Db88c9c292b&data=04%7C01%7CMartina.Popova%40eui.eu%7C97bfa61e4d9142b7051308d91e8c7fc7%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C637574411047330325%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=WzFZUy7j2UweVWpa%2F7XxROQaca1vVrx4I2V034lP4rU%3D&reserved=0",
+      "title": "21 May 2021 Monthly (ZIP)"
+    },
+    {
+      "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3D8ca4f95155%26e%3Db88c9c292b&data=05%7C01%7CMaria.Hernandez%40eui.eu%7Cbf010833177142516f3208da43d4ba8d%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C637896878178432239%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=enFwEkTR5MB3KiSeeSwD6vcShOfi8CjbvrN4riWv8Yk%3D&reserved=0",
+      "title": "22 October 2021 Monthly (ZIP)"
+    }
+  ]
+}
