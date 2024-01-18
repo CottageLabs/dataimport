@@ -1,0 +1,50 @@
+{
+  "name": "The Human Life-Table Database (HLD)",
+  "creators": [
+    {
+      "person_or_org": {
+        "name": "The Human Life-Table Database (HLD)",
+        "identifiers": [
+          {
+            "identifier": "https://www.lifetable.de/",
+            "scheme": "url"
+          }
+        ],
+        "type": "organizational"
+      }
+    }
+  ],
+  "id": "human_life_table",
+  "source": "static",
+  "url": "https://www.lifetable.de/Data/ZippedDataFiles",
+  "url_doc": "https://www.lifetable.de/File/GetDocument/methodology.pdf",
+  "description": "The Human Life-Table Database (HLD) is a collection of population life tables for a multitude of countries covering many years. Most of the HLD life tables are for national populations, which have been officially published by national statistical offices.",
+  "published": "2022-07-22",
+  "languages": [
+    {
+      "id": "eng"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "time series"
+    },
+    {
+      "subject": "mortality"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2023-02-15",
+      "type": {
+        "id": "updated"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "url": "https://www.lifetable.de/data/hld.zip",
+      "title": "All HLD data"
+    }
+  ]
+}
