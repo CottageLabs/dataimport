@@ -16,6 +16,7 @@ DATASOURCES = {
     "cdc": "dataimport.datasources.cdc.CDC",
     "coronanet": "dataimport.datasources.coronanet.CORONANET",
     "ecdc": "dataimport.datasources.ecdc.ECDC",
+    "economist": "dataimport.datasources.economist.ECONOMIST",
 }
 
 PRODUCTS = {
@@ -31,7 +32,7 @@ TARGETS = {
 PRODUCT_SOURCES = {
     "jac": ["doaj"],
     "eui": ["ons"],
-    "datacite": ["ecdc"]
+    "datacite": ["economist"] # "ons", "static", "acled",
 }
 
 PRODUCT_TARGETS = {
@@ -62,6 +63,7 @@ STORE_SCOPES = {
     "cdc": os.path.join(DATABASES, "datasources", "cdc"),
     "coronanet": os.path.join(DATABASES, "datasources", "coronanet"),
     "ecdc": os.path.join(DATABASES, "datasources", "ecdc"),
+    "economist": os.path.join(DATABASES, "datasources", "economist"),
 }
 
 STORE_KEEP_HISTORIC = {
@@ -76,7 +78,8 @@ STORE_KEEP_HISTORIC = {
     "static": 1,
     "cdc": 1,
     "coronanet": 1,
-    "ecdc": 1
+    "ecdc": 1,
+    "economist": 1
 }
 
 

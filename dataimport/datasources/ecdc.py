@@ -157,8 +157,8 @@ class ECDC(Datasource):
                     "datasets": datasets
                 }
 
-                if url_doc_tag:
-                    dataset_json['url_doc'] = url_doc_tag['href']
+                #if url_doc_tag:
+                #    dataset_json['url_doc'] = url_doc_tag['href']
 
                 validate(dataset_json, datacite_intermediary_schema)
 
