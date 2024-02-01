@@ -447,5 +447,6 @@
       "url": "https://github.com/YouGov-Data/covid-19-tracker/raw/master/data/vietnam.csv",
       "title": "Vietnam (CSV)"
     }
-  ]
+  ],
+  "inactive": true
 }

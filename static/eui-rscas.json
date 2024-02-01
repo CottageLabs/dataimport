@@ -56,9 +56,6 @@
       "subject": "epidemiology"
     },
     {
-      "subject": "health"
-    },
-    {
       "subject": "mortality"
     },
     {
@@ -125,5 +122,6 @@
       "url": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstgallen-endowment.us1.list-manage.com%2Ftrack%2Fclick%3Fu%3D4d3c72e64f71605940b148af0%26id%3D8ca4f95155%26e%3Db88c9c292b&data=05%7C01%7CMaria.Hernandez%40eui.eu%7Cbf010833177142516f3208da43d4ba8d%7Cd3f434ee643c409f94aa6db2f23545ce%7C0%7C0%7C637896878178432239%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=enFwEkTR5MB3KiSeeSwD6vcShOfi8CjbvrN4riWv8Yk%3D&reserved=0",
       "title": "22 October 2021 Monthly (ZIP)"
     }
-  ]
+  ],
+  "inactive": true
 }

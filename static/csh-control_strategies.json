@@ -63,5 +63,6 @@
       "url": "https://raw.githubusercontent.com/amel-github/covid19-interventionmeasures/master/COVID19_non-pharmaceutical-interventions_version2_utf8.csv",
       "title": "Full dataset as a CSV"
     }
-  ]
+  ],
+  "inactive": true
 }

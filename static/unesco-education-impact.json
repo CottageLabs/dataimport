@@ -52,5 +52,6 @@
       "url": "https://en.unesco.org/sites/default/files/unesco_data_on_school_closures_from_february_2020_to_june_2022.csv_.zip",
       "title": "Dataset (ZIP)"
     }
-  ]
+  ],
+  "inactive": true
 }

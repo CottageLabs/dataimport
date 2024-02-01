@@ -35,9 +35,6 @@
       "subject": "epidemiology"
     },
     {
-      "subject": "policy"
-    },
-    {
       "subject": "mortality"
     },
     {
@@ -57,5 +54,6 @@
       "url": "https://github.com/nytimes/covid-19-data/blob/master/excess-deaths/deaths.csv",
       "title": "Dataset (CSV)"
     }
-  ]
+  ],
+  "inactive": true
 }

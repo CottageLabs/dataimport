@@ -35,9 +35,6 @@
       "subject": "epidemiology"
     },
     {
-      "subject": "policy"
-    },
-    {
       "subject": "mortality"
     },
     {
@@ -75,5 +72,6 @@
       "url": "https://www.oecd.org/tax/covid-19-tax-policy-and-other-measures.xlsm",
       "title": "Tax policy responses by country (Excel)"
     }
-  ]
+  ],
+  "inactive": true
 }

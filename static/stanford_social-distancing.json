@@ -73,5 +73,6 @@
       "url": "https://docs.google.com/spreadsheets/d/133Lry-k80-BfdPXhlS0VHsLEUQh5_UutqAt7czZd7ek/export#gid=0?format=xlsx",
       "title": "Crowdsourced COVID-19 Intervention Data (Excel)"
     }
-  ]
+  ],
+  "inactive": true
 }

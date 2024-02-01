@@ -34,9 +34,6 @@
     },
     {
       "subject": "epidemiology"
-    },
-    {
-      "subject": "policy"
     }
   ],
   "dates": [
@@ -52,5 +49,6 @@
       "url": "https://github.com/CSSEGISandData/COVID-19",
       "title": "Github Landing page containing data"
     }
-  ]
+  ],
+  "inactive": true
 }

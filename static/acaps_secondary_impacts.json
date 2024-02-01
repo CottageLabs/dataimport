@@ -81,5 +81,6 @@
       "url": "https://www.acaps.org/fileadmin/Dataset/Data_Link/acaps_covid19_secondary_impacts_beta.xlsx",
       "title": "Secondary Impacts of COVID-19 dataset"
     }
-  ]
+  ],
+  "inactive": true
 }

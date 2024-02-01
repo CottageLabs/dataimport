@@ -301,5 +301,6 @@
       "url": "https://covidtracking.com/data/download/wyoming-history.csv",
       "title": "Wyoming (CSV)"
     }
-  ]
+  ],
+  "inactive": true
 }

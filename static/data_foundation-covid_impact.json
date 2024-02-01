@@ -72,5 +72,6 @@
       "url": "https://www.covid-impact.org/results",
       "title": "Dataset landing page"
     }
-  ]
+  ],
+  "inactive": true
 }

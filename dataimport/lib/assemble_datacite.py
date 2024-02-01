@@ -126,4 +126,7 @@ def get_invenio_record(json_obj: dict) -> dict:
 
     invenio_record['custom_fields'] = {'datasets': get_alt_ids(json_obj)}
 
+    if 'inactive' in json_obj and json_obj['inactive'] is True:
+        invenio_record['custom_fields']['custom:inactive'] = True
+
     return invenio_record

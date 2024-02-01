@@ -68,5 +68,6 @@
       "url": "https://docs.google.com/spreadsheets/d/1xAyBFTrlxSsTKQS7IDyr_Ah4JLBYj6_HX6ijKdm4fAY/export?gid=0&format=xlsx",
       "title": "Full dataset (Excel)"
     }
-  ]
+  ],
+  "inactive": true
 }

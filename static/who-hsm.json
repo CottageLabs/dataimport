@@ -47,5 +47,6 @@
       "url": "https://eurohealthobservatory.who.int/monitors/hsrm/all-updates",
       "title": "Responses"
     }
-  ]
+  ],
+  "inactive": true
 }

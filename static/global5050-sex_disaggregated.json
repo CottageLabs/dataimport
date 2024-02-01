@@ -92,5 +92,6 @@
       "url": "https://globalhealth5050.org/?_covid-data=dataset-historic&_extype=excel",
       "title": "Full dataset (Excel)"
     }
-  ]
+  ],
+  "inactive": true
 }

@@ -91,5 +91,6 @@
       "url": "https://github.com/uclalawcovid19behindbars/data/raw/master/historical-data/historical_state_jurisdiction_counts.csv",
       "title": "Historical State Jurisdiction Counts (CSV)"
     }
-  ]
+  ],
+  "inactive": true
 }

@@ -34,6 +34,7 @@ datacite_intermediary_schema = {
                 "additionalProperties": False
             }
         },
+        "inactive": {"type": "boolean"},
         "url": {"type": "string"},
         "url_doc": {"type": "string"},
         "url_api": {"type": "string"}

@@ -97,5 +97,6 @@
       "url": "https://github.com/OxCGRT/covid-policy-dataset/raw/main/data/OxCGRT_vaccines_full_subnational_v1.csv",
       "title": "Vaccines full subnational (CSV)"
     }
-  ]
+  ],
+  "inactive": true
 }

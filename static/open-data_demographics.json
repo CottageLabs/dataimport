@@ -177,5 +177,6 @@
       "url": "https://storage.googleapis.com/covid19-open-data/v3/by-sex.json",
       "title": "By Sex (JSON)"
     }
-  ]
+  ],
+  "inactive": true
 }

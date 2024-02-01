@@ -55,5 +55,6 @@
       "url": "https://www.mortality.org/File/GetDocument/Public/STMF/Outputs/stmf.csv",
       "title": "All data (CSV)"
     }
-  ]
+  ],
+  "inactive": true
 }

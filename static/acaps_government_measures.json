@@ -76,5 +76,6 @@
       "url": "https://www.acaps.org/fileadmin/Dataset/Data_Link/acaps_covid19_humanitarian_exemptions_dataset.xlsx",
       "title": "COVID-19 Humanitarian Exemptions to Government Measures"
     }
-  ]
+  ],
+  "inactive": true
 }
