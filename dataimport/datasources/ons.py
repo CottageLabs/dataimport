@@ -90,7 +90,6 @@ class ONS(Datasource):
                     download_descriptions = soup.findAll('h3', {'class': 'margin-top--0 margin-bottom--0'})
 
                     # contact = soup.find('address')
-                    # print(contact.text.strip().split('\n')[0].replace(' and', ',').replace('&', ',').replace(',,', ','))
                     script['id'] = dataset
                     script['source'] = self.id
                     script['publisher'] = 'Office for National Statistics'
@@ -122,9 +121,6 @@ class ONS(Datasource):
                     script['published'] = script.pop('datePublished')[:10]
                     del script['distribution']
                     script['datasets'] = []  # script.pop('distribution')
-                    # template = script['datasets'].pop()
-                    # del template['@type']
-                    # self.log(template)
 
                     # Four datasets offer more than one format of the data, they are incorrectly
                     # formatted
@@ -146,7 +142,6 @@ class ONS(Datasource):
                                 # template['encodingFormat'] = download['href'][download['href'].rfind('.') + 1:]
                                 script['datasets'].append(template)
 
-                                # template = copy.deepcopy(template)
                                 links.append(download['href'])
 
                     else:
