@@ -2,7 +2,7 @@ import time
 import requests
 from functools import wraps
 
-from requests import Response
+from requests import Response, ReadTimeout
 
 # Rate limit settings
 req_freq = 1  # 1 request per second
@@ -52,6 +52,10 @@ def rate_limited_req(method, *args, **kwargs) -> Response:
     try:
         resp = requests.request(method, *args, **kwargs, timeout=5)
     except TimeoutError:
+        # Try again with a very long timeout
+        time.sleep(2)
+        resp = requests.request(method, *args, **kwargs, timeout=30)
+    except ReadTimeout:
         # Try again with a very long timeout
         time.sleep(2)
         resp = requests.request(method, *args, **kwargs, timeout=30)
