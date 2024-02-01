@@ -76,16 +76,16 @@ class ACLED(Datasource):
                     dataset_publication_date = datetime.strptime(m.groups()[0], '%d %B %Y').date().isoformat()
 
                     acled_data = {'name': "COVID-19 Disorder Tracker",
-                                  # 'publisher': 'The Armed Conflict Location & Event Data Project (ACLED)',
+                                  'publisher': 'The Armed Conflict Location & Event Data Project (ACLED)',
                                   'id': 'acled',
                                   'source': self.id,
                                   'url': "https://acleddata.com/analysis/covid-19-disorder-tracker/",
+                                  'url_doc': 'https://acleddata.com/acleddatanew/wp-content/uploads/dlm_uploads/2020/04/ACLED_Direct-COVID19-Disorder_Methodology-Brief_4.2020.pdf',
                                   'description': "The COVID-19 Disorder Tracker (CDT) provides special coverage of the pandemics impact on political violence and protest around the world, monitoring changes in demonstration activity, state repression, mob attacks, overall rates of armed conflict, and more.",
                                   'published': dataset_publication_date,
                                   'subjects': [{'subject': 'politics'},
                                                {'subject': 'society'},
                                                {'subject': 'democracy'}],
-                                  # 'publicationDate': "2020",
                                   "creators": [{
                                       "person_or_org": {
                                           "name": "The Armed Conflict Location & Event Data Project (ACLED)",
@@ -96,11 +96,13 @@ class ACLED(Datasource):
                                           "type": "organizational"
                                       }
                                   }],
-                                  # 'datasetDocumentation': "https://acleddata.com/acleddatanew/wp-content/uploads/dlm_uploads/2020/04/ACLED_Direct-COVID19-Disorder_Methodology-Brief_4.2020.pdf",
+                                  "languages": [
+                                      {
+                                          "id": "eng"
+                                      }
+                                  ],
                                   "datasets": [
                                       {
-                                          # "@type": "DataDownload",
-                                          # "encodingFormat": "xlsx",
                                           "url": dataset_link['href'].split('?')[0],
                                           "size": dataset_size,
                                           "title": dataset_title.text
