@@ -37,7 +37,8 @@ datacite_intermediary_schema = {
         "inactive": {"type": "boolean"},
         "url": {"type": "string"},
         "url_doc": {"type": "string"},
-        "url_api": {"type": "string"}
+        "url_api": {"type": "string"},
+        "doi": {"type": "string"}
     },
     "required": ["id", "source", "url", "name", "creators", "description", "datasets"],
     "additionalProperties": False

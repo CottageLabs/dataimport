@@ -120,7 +120,7 @@ def get_invenio_record(json_obj: dict) -> dict:
         }
     ]
 
-    for url_type in ['url_doc', 'url_api']:
+    for url_type in ['url_doc', 'url_api', 'doi']:
         if url_type in json_obj:
             metadata['identifiers'].append({"identifier": json_obj[url_type], "scheme": url_type})
 
